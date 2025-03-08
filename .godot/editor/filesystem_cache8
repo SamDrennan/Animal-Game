@@ -1,0 +1,7 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1741477594
+camera.tscn::PackedScene::9073626849291492281::1741477417::0::1::::<><>::res://camera_pivot.gd
+camera_pivot.gd::GDScript::-1::1741477417::0::1::::<>Marker3D<>::
+icon.svg::CompressedTexture2D::4558128832728953608::1741477417::1741477466::1::::<><>::
+main.tscn::PackedScene::5497894077211875588::1741477470::0::1::::<><>::uid://d2jlkqwvtl1qj::::res://camera.tscn
+README.md::TextFile::-1::1741477417::0::1::::<><>::
