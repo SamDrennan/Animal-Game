@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cklhrodqmp6ei"]
+
+[ext_resource type="PackedScene" uid="uid://d2jlkqwvtl1qj" path="res://camera.tscn" id="1_fqvo5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lr6dv"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbeed"]
+albedo_color = Color(0, 0.380392, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u53cu"]
+material = SubResource("StandardMaterial3D_fbeed")
+size = Vector3(50, 1, 50)
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 22.7229, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_lr6dv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_u53cu")
+
+[node name="CameraPivot" parent="." instance=ExtResource("1_fqvo5")]
