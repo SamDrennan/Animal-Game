@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cklhrodqmp6ei"]
+
+[ext_resource type="PackedScene" uid="uid://d2jlkqwvtl1qj" path="res://camera.tscn" id="1_fqvo5"]
+[ext_resource type="Script" path="res://main.gd" id="1_rmlao"]
+[ext_resource type="MeshLibrary" uid="uid://57cmlq7fvdtn" path="res://TileSet.tres" id="2_6pcsp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3yrw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ala7m"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kbt33"]
+material = SubResource("StandardMaterial3D_ala7m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ijuw"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yipgt"]
+material = SubResource("StandardMaterial3D_5ijuw")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_rmlao")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 22.7229, 0)
+
+[node name="CameraPivot" parent="." instance=ExtResource("1_fqvo5")]
+
+[node name="area" type="StaticBody3D" parent="."]
+
+[node name="Coll" type="CollisionShape3D" parent="area"]
+shape = SubResource("BoxShape3D_r3yrw")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh_library = ExtResource("2_6pcsp")
+cell_size = Vector3(1, 1, 1)
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="s1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.67854, 0, 0)
+mesh = SubResource("BoxMesh_kbt33")
+
+[node name="s2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_yipgt")
