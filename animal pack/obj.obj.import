@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dg647o1xo1ubo"
+path="res://.godot/imported/obj.obj-044dc1100e851c3e23bf9c01544f799d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/obj.obj-044dc1100e851c3e23bf9c01544f799d.mesh"]
+
+source_file="res://animal pack/obj.obj"
+dest_files=["res://.godot/imported/obj.obj-044dc1100e851c3e23bf9c01544f799d.mesh", "res://.godot/imported/obj.obj-044dc1100e851c3e23bf9c01544f799d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

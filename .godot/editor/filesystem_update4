@@ -1,1 +1,7 @@
 res://main.tscn
+res://TileSet.tres
+res://Scripts/unit.gd
+res://Scripts/static_unit.gd
+res://Scripts/dynamic_unit.gd
+res://Scripts/tribe.gd
+res://models.tscn
