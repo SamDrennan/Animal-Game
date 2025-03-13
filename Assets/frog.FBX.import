@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvj3hiwj4ym1r"
-path="res://.godot/imported/frog.FBX-43514563389d0b8193c1b63278f73927.scn"
+valid=false
 
 [deps]
 
-source_file="res://frog.FBX"
-dest_files=["res://.godot/imported/frog.FBX-43514563389d0b8193c1b63278f73927.scn"]
+source_file="res://Assets/frog.FBX"
 
 [params]
 

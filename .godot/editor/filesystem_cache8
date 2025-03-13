@@ -1,16 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741777820
-BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741777313::1741777374::1::::<><>::
+::res://::1741869515
 camera.tscn::PackedScene::9073626849291492281::1741777820::0::1::::<><>::res://Scripts/camera_pivot.gd
-frog.FBX::PackedScene::8653520198240445413::1741777314::1741777377::1::::<><>::
 icon.svg::CompressedTexture2D::4558128832728953608::1741481017::1741777372::1::::<><>::
-main.tscn::PackedScene::5497894077211875588::1741777532::0::1::::<><>::uid://d2jlkqwvtl1qj::::res://camera.tscn
-models.tscn::PackedScene::8079672866901922699::1741777529::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
+main.tscn::PackedScene::5497894077211875588::1741869485::0::1::::<><>::uid://d2jlkqwvtl1qj::::res://camera.tscn<>res://main.gd<>uid://57cmlq7fvdtn::::res://TileSet.tres
+models.tscn::PackedScene::8079672866901922699::1741778802::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
 README.md::TextFile::-1::1741481017::0::1::::<><>::
-TileSet.tres::MeshLibrary::2131486620684384407::1741777313::0::1::::<><>::
-::res://animal pack/::1741777374
+TileSet.tres::MeshLibrary::2131486620684384407::1741778238::0::1::::<><>::
+::res://animal pack/::1741869485
 fbx.fbx::PackedScene::4326998034577205847::1741777313::1741777374::1::::<><>::
 obj.obj::Mesh::7646209538035120016::1741777313::1741777373::1::::<><>::
-::res://Scripts/::1741777820
+::res://Assets/::1741869485
+BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741869485::1741869517::1::::<><>::
+frog.FBX::PackedScene::8653520198240445413::1741869485::1741869518::0::::<><>::
+::res://Assets/animal pack/::1741869485
+::res://Scripts/::1741869485
 camera_pivot.gd::GDScript::-1::1741481017::0::1::::<>Marker3D<>::
-Static_Unit.gd::GDScript::-1::1741777850::0::1::::<>Node<>::
+dynamic_unit.gd::GDScript::-1::1741778615::0::1::::Dynamic_Unit<>Unit<>::
+main.gd::GDScript::-1::1741869485::0::1::::<>Node3D<>::
+static_unit.gd::GDScript::-1::1741778379::0::1::::Static_Unit<>Unit<>::
+tribe.gd::GDScript::-1::1741778725::0::1::::Tribe<>Node<>::
+unit.gd::GDScript::-1::1741778238::0::1::::Unit<>Node<>::
