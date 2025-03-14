@@ -25,9 +25,10 @@ func _process(delta: float) -> void:
 			
 			
 func _physics_process(delta: float) -> void:
-	pass
-	#if (self.position.y > 1): # If in the air, fall towards the floor. Literally gravity
-		#self.position.y = self.position.y - (75 * delta)
+	
+	if (self.position.y >= 1 + (5 * delta)): # If in the air, fall towards the floor. Literally gravity
+		self.position.y = self.position.y - (5 * delta)
+		self.destination.y = self.position.y
 			
 func attack_animation() -> void:
 	pass

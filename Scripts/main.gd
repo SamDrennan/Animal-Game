@@ -9,7 +9,7 @@ const RAY_LENGTH = 1000.0
 
 var map_size = 10
 
-
+var temp_area
 var selection1
 var selection2
 
@@ -32,6 +32,7 @@ func _ready() -> void:
 	print("here")
 	
 	var area = $area/Coll
+	temp_area = $area
 	area.scale.x = map_size
 	area.scale.z = map_size
 	area.position.x = map_size/2
@@ -57,7 +58,7 @@ func _process(delta: float) -> void:
 		
 	
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == 1:
+	if event is InputEventMouseButton and event.pressed and (event.button_index == 1 or event.button_index == 2):
 		select_node(event)
 
 func select_node(event):
@@ -73,6 +74,17 @@ func select_node(event):
 		selection2.position = selection1.position
 		var new_pos = result["position"]
 		selection1.position = Vector3( ceil(new_pos.x + .5) - .5, 1, ceil(new_pos.z + .5) - .5)
+
+
+		var unit_script : Script = result["collider"].get_parent().get_script().get_base_script()
 		
-		if (temp_selection != null):
+		if (event.button_index == 1):
+			if (unit_script != null):
+				if (unit_script.get_global_name() == "Unit"):
+					temp_selection = result["collider"].get_parent()
+			else:
+				temp_selection = null
+		
+		
+		if (temp_selection != null and result["collider"] == temp_area and event.button_index == 2):
 			temp_selection.destination = result["position"]

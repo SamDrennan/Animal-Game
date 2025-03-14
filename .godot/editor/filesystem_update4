@@ -1,8 +1,8 @@
-res://main.tscn
+res://cat.tscn
 res://TileSet.tres
 res://models.tscn
+res://main.tscn
 res://camera.tscn
 res://Scripts/main.gd
-res://cat.tscn
-res://Scripts/unit.gd
 res://Scripts/dynamic_unit.gd
+res://bear.tscn
