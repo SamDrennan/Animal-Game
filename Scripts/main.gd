@@ -88,3 +88,7 @@ func select_node(event):
 		
 		if (temp_selection != null and result["collider"] == temp_area and event.button_index == 2):
 			temp_selection.destination = result["position"]
+			
+	else:
+		if (event.button_index == 1):
+			temp_selection = null
