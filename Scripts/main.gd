@@ -86,7 +86,7 @@ func select_node(event):
 				temp_selection = null
 		
 		
-		if (temp_selection != null and result["collider"] == temp_area and event.button_index == 2):
+		if (temp_selection != null and result["collider"] == temp_area and event.button_index == 2 and temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
 			temp_selection.destination = result["position"]
 			
 	else:
