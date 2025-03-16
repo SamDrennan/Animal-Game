@@ -1,9 +1,9 @@
 res://camera.tscn
-res://bear.tscn
 res://TileSet.tres
+res://bear.tscn
 res://main.tscn
 res://cat.tscn
-res://Scripts/main.gd
-res://Scripts/dynamic_unit.gd
-res://Scripts/unit.gd
 res://health_bar.tscn
+res://Scripts/dynamic_unit.gd
+res://Scripts/main.gd
+res://beaver.tscn

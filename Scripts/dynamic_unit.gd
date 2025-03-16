@@ -2,7 +2,7 @@ extends Unit
 
 class_name Dynamic_Unit
 
-var unitID: int
+var unitID: int # 1 = Beaver, 2 = Squirrel, 3 = Wolf/cat for now, 4 = Bear
 var destination: Vector3
 var speed: int = 3
 var damage: int = 1
@@ -15,7 +15,17 @@ func _init():
 
 func _ready() -> void:
 	destination = self.position
-	$Sprite3D/SubViewport/Panel/Label.text="hey"
+	var label = $Sprite3D/SubViewport/Panel/Label
+	match unitID:
+		1:
+			label.text = "Beaver"
+		2:
+			label.text = "Squirrel"
+		3:
+			label.text = "Wolf"
+		4:
+			label.text = "Bear"
+	
 func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
 	if (destination != self.position):

@@ -1,0 +1,162 @@
+[gd_scene load_steps=22 format=3 uid="uid://b2clf3hgm1cw5"]
+
+[ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_k51xb"]
+[ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_apvv5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxuwv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvoti"]
+size = Vector3(1.5, 1.1, 0.8)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x02lc"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5bdg"]
+albedo_color = Color(0.552113, 0.335676, 0.2849, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qaa7u"]
+material = SubResource("StandardMaterial3D_x5bdg")
+radius = 0.09
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g11pg"]
+albedo_color = Color(0.642723, 0.402605, 0.346066, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s2gdm"]
+material = SubResource("StandardMaterial3D_g11pg")
+radius = 0.075
+height = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8u5d"]
+albedo_color = Color(0.190762, 0.190762, 0.190762, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ryrd"]
+material = SubResource("StandardMaterial3D_m8u5d")
+radius = 0.03
+height = 0.06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckhtv"]
+albedo_color = Color(0.601223, 0.601223, 0.601223, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7c0oy"]
+material = SubResource("StandardMaterial3D_ckhtv")
+radius = 0.03
+height = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxpb6"]
+albedo_color = Color(0.982343, 0.982342, 0.982342, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d1u7w"]
+material = SubResource("StandardMaterial3D_dxpb6")
+size = Vector3(0.02, 0.05, 0.005)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo2bh"]
+albedo_color = Color(0.642723, 0.402605, 0.346066, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s0vsn"]
+material = SubResource("StandardMaterial3D_vo2bh")
+radius = 0.05
+height = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7yvs"]
+albedo_color = Color(0.300242, 0.168724, 0.138001, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1fona"]
+material = SubResource("StandardMaterial3D_p7yvs")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.005
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75uma"]
+albedo_color = Color(0.198933, 0.104405, 0.0823373, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g3fbq"]
+material = SubResource("StandardMaterial3D_75uma")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.01
+
+[node name="Beaver" type="Node3D"]
+script = ExtResource("1_k51xb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0.35, 0)
+physics_material_override = SubResource("PhysicsMaterial_cxuwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-3.53188e-08, 0, -0.808, 0, 0.808, 0, 0.808, 0, -3.53188e-08, 1.93299e-09, -0.236238, -0.0221108)
+shape = SubResource("BoxShape3D_bvoti")
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_apvv5")]
+texture = SubResource("ViewportTexture_x02lc")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(-1.5, 0, -1.31134e-07, 0, 1.5, 0, 1.31134e-07, 0, -1.5, 0, 0, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(-3.09086e-08, 3.09086e-08, 1, 0.707107, 0.707107, 0, -0.707107, 0.707107, -4.37114e-08, 0, 0.15, 0)
+mesh = SubResource("CapsuleMesh_qaa7u")
+
+[node name="Head" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208366, 0.106151)
+mesh = SubResource("SphereMesh_s2gdm")
+skeleton = NodePath("../..")
+
+[node name="Left Eye" type="MeshInstance3D" parent="Pivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 0.0198297, 0.0399854)
+mesh = SubResource("SphereMesh_7ryrd")
+skeleton = NodePath("../..")
+
+[node name="Right Eye" type="MeshInstance3D" parent="Pivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.02, 0.04)
+mesh = SubResource("SphereMesh_7ryrd")
+skeleton = NodePath("../..")
+
+[node name="Nose" type="MeshInstance3D" parent="Pivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0209875, 0.0596119)
+mesh = SubResource("SphereMesh_7c0oy")
+skeleton = NodePath("../..")
+
+[node name="Left Tooth" type="MeshInstance3D" parent="Pivot/Head/Nose"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, -0.027, 0)
+mesh = SubResource("BoxMesh_d1u7w")
+skeleton = NodePath("../..")
+
+[node name="Right Tooth" type="MeshInstance3D" parent="Pivot/Head/Nose"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, -0.027, 0)
+mesh = SubResource("BoxMesh_d1u7w")
+skeleton = NodePath("../..")
+
+[node name="Left Leg" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0.075, -0.039)
+mesh = SubResource("SphereMesh_s0vsn")
+skeleton = NodePath("../..")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Left Leg"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0653029, 0.0459584)
+mesh = SubResource("CylinderMesh_1fona")
+skeleton = NodePath("../..")
+
+[node name="Right Leg" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.075, -0.039)
+mesh = SubResource("SphereMesh_s0vsn")
+skeleton = NodePath("../..")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Right Leg"]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0653029, 0.0459584)
+mesh = SubResource("CylinderMesh_1fona")
+skeleton = NodePath("../..")
+
+[node name="Tail" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.8, 0, 0, 0, 0.965926, -0.310583, 0, 0.258819, 1.15911, 0, 0.111563, -0.178175)
+mesh = SubResource("CylinderMesh_g3fbq")
+
+[node name="Left Hand" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.5, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.05, 0.110364, 0.0755402)
+mesh = SubResource("CylinderMesh_1fona")
+skeleton = NodePath("../..")
+
+[node name="Right Hand" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(0.5, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, -0.05, 0.11, 0.076)
+mesh = SubResource("CylinderMesh_1fona")
+skeleton = NodePath("../..")
