@@ -7,3 +7,5 @@ res://health_bar.tscn
 res://Scripts/dynamic_unit.gd
 res://Scripts/main.gd
 res://beaver.tscn
+res://wolf.tscn
+res://models.tscn

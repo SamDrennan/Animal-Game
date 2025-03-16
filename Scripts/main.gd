@@ -1,7 +1,7 @@
 @tool
 extends Node3D
 
-var cat = preload("res://cat.tscn")
+var wolf = preload("res://wolf.tscn")
 var bear = preload("res://bear.tscn")
 var beaver = preload("res://beaver.tscn")
 
@@ -49,10 +49,10 @@ func _ready() -> void:
 	depot = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
 	grid_map.set_cell_item(depot, 73)
 	
-	var a_cat : Dynamic_Unit = cat.instantiate()
-	a_cat.position = Vector3(1,2,1)
-	a_cat.unitID = 3
-	add_child(a_cat)
+	var a_wolf : Dynamic_Unit = wolf.instantiate()
+	a_wolf.position = Vector3(1,2,1)
+	a_wolf.unitID = 3
+	add_child(a_wolf)
 	
 	var a_bear : Dynamic_Unit = bear.instantiate()
 	a_bear.position = Vector3(4,2,2)
