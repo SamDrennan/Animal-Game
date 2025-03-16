@@ -1,23 +1,34 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741953900
-camera.tscn::PackedScene::9073626849291492281::1741878869::0::1::::<><>::res://Scripts/camera_pivot.gd
-cat.tscn::PackedScene::4549391083927992049::1741878869::0::1::::<><>::res://Scripts/dynamic_unit.gd
-icon.svg::CompressedTexture2D::4558128832728953608::1741481017::1741777372::1::::<><>::
-main.tscn::PackedScene::5497894077211875588::1741878869::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://5mrjj38glxv0::::res://TileSet.tres<>uid://b5202oj2rco46::::res://cat.tscn
-models.tscn::PackedScene::8079672866901922699::1741878868::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
-README.md::TextFile::-1::1741481017::0::1::::<><>::
-TileSet.tres::MeshLibrary::2131486620684384407::1741869680::0::1::::<><>::
-::res://animal pack/::1741869485
-fbx.fbx::PackedScene::4326998034577205847::1741777313::1741777374::1::::<><>::
-obj.obj::Mesh::7646209538035120016::1741777313::1741777373::1::::<><>::
-::res://Assets/::1741869518
-BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741869485::1741869517::1::::<><>::
-frog.FBX::PackedScene::8653520198240445413::1741869485::1741869518::0::::<><>::
-::res://Assets/animal pack/::1741869485
-::res://Scripts/::1741878833
-camera_pivot.gd::GDScript::-1::1741481017::0::1::::<>Marker3D<>::
-dynamic_unit.gd::GDScript::-1::1741878833::0::1::::Dynamic_Unit<>Unit<>::
-main.gd::GDScript::-1::1741877733::0::1::::<>Node3D<>::
-static_unit.gd::GDScript::-1::1741778379::0::1::::Static_Unit<>Unit<>::
-tribe.gd::GDScript::-1::1741778725::0::1::::Tribe<>Node<>::
-unit.gd::GDScript::-1::1741878238::0::1::::Unit<>Node3D<>::
+::res://::1742085156
+bear.tscn::PackedScene::5854718542822789394::1742085156::0::1::::<><>::res://Scripts/dynamic_unit.gd
+camera.tscn::PackedScene::9073626849291492281::1742085156::0::1::::<><>::res://Scripts/camera_pivot.gd
+cat.tscn::PackedScene::4549391083927992049::1742085156::0::1::::<><>::res://Scripts/dynamic_unit.gd
+icon.svg::CompressedTexture2D::4558128832728953608::1741962463::1741962463::1::::<><>::
+main.tscn::PackedScene::5497894077211875588::1742085156::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://5mrjj38glxv0::::res://TileSet.tres<>uid://b5202oj2rco46::::res://cat.tscn<>uid://cpocmhay7fk3k::::res://bear.tscn
+models.tscn::PackedScene::8079672866901922699::1741962463::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
+README.md::TextFile::-1::1741962463::0::1::::<><>::
+TileSet.tres::MeshLibrary::2131486620684384407::1742084570::0::1::::<><>::
+::res://animal pack/::1741962463
+fbx.fbx::PackedScene::4326998034577205847::1741962463::1741962463::1::::<><>::
+obj.obj::Mesh::7646209538035120016::1741962463::1741962463::1::::<><>::
+::res://Assets/::1741971478
+BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741962463::1741962463::1::::<><>::
+frog.FBX::PackedScene::8653520198240445413::1741962463::1741971478::0::::<><>::
+::res://Assets/animal pack/::1741962463
+::res://Scripts/::1742085156
+camera_pivot.gd::GDScript::-1::1741962463::0::1::::<>Marker3D<>::
+dynamic_unit.gd::GDScript::-1::1741962463::0::1::::Dynamic_Unit<>Unit<>::
+main.gd::GDScript::-1::1742085156::0::1::::<>Node3D<>::
+static_unit.gd::GDScript::-1::1741962463::0::1::::Static_Unit<>Unit<>::
+tribe.gd::GDScript::-1::1741962463::0::1::::Tribe<>Node<>::
+unit.gd::GDScript::-1::1741962463::0::1::::Unit<>Node3D<>::
+::res://ui_resources/::1742102278
+action_select_plane.png::CompressedTexture2D::5104512667349055019::1742102278::1742102758::1::::<><>::
+attack_icon.png::CompressedTexture2D::2317719978538721549::1742102124::1742102758::1::::<><>::
+bear_icon.png::CompressedTexture2D::8133502983363929642::1742102206::1742102758::1::::<><>::
+carrying_icon.png::CompressedTexture2D::7258773641393131833::1742102184::1742102758::1::::<><>::
+extracting_icon.png::CompressedTexture2D::1858263850341675166::1742102152::1742102758::1::::<><>::
+mammal_resources.png::CompressedTexture2D::3035364463237940895::1742102037::1742102758::1::::<><>::
+mammal_tribe_profile.png::CompressedTexture2D::5073389456620545671::1742102056::1742102758::1::::<><>::
+pick up_icon.png::CompressedTexture2D::6489495640573272460::1742102139::1742102758::1::::<><>::
+wolf_icon.png::CompressedTexture2D::6932913337983966749::1742102220::1742102758::1::::<><>::

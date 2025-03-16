@@ -8,10 +8,16 @@ var speed: int = 3
 var damage: int = 1
 var isBled: bool
 
+
+func _init():
+	# set super value
+	super._init(100,0)
+
 func _ready() -> void:
 	destination = self.position
-
+	$Sprite3D/SubViewport/Panel/Label.text="hey"
 func _process(delta: float) -> void:
+	$Sprite3D/SubViewport/ProgressBar.value=health
 	if (destination != self.position):
 		var direction = self.position.direction_to(destination)
 		var translation = direction*speed*delta

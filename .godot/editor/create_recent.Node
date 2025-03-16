@@ -1,3 +1,9 @@
+Label
+Panel
+Node3D
+ProgressBar
+SubViewport
+Sprite3D
 StaticBody3D
 MeshInstance3D
 CollisionShape3D

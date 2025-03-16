@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://b5202oj2rco46"]
+[gd_scene load_steps=11 format=4 uid="uid://b5202oj2rco46"]
 
 [ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_86te4"]
+[ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_q3aa5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxuwv"]
 
@@ -103,6 +104,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_kwdmr")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_qoujx"]
+viewport_path = NodePath("SubViewport")
+
 [node name="Cat" type="Node3D"]
 script = ExtResource("1_86te4")
 
@@ -118,3 +122,6 @@ shape = SubResource("BoxShape3D_ugrkd")
 transform = Transform3D(1, -2.22045e-16, 1.86265e-09, 2.22045e-16, 1, -4.25701e-15, -1.86265e-09, -4.29171e-15, 1, 0, 0.1, 0)
 mesh = SubResource("ArrayMesh_disl3")
 skeleton = NodePath("")
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_q3aa5")]
+texture = SubResource("ViewportTexture_qoujx")
