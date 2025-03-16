@@ -103,8 +103,8 @@ func select_node(event):
 				temp_selection = null
 		
 		
-		if (temp_selection != null and result["collider"] == temp_area and event.button_index == 2 and temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
-			temp_selection.destination = result["position"]
+		if (temp_selection != null and event.button_index == 2 and temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
+			temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
 			
 	else:
 		if (event.button_index == 1):
