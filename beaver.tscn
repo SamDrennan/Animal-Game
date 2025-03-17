@@ -6,7 +6,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxuwv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bvoti"]
-size = Vector3(1.5, 1.1, 0.8)
+size = Vector3(1.2, 1, 0.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x02lc"]
 viewport_path = NodePath("SubViewport")

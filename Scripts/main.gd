@@ -1,9 +1,11 @@
 @tool
 extends Node3D
 
+var beaver = preload("res://beaver.tscn")
+var squirrel = preload("res://squirrel.tscn")
 var wolf = preload("res://wolf.tscn")
 var bear = preload("res://bear.tscn")
-var beaver = preload("res://beaver.tscn")
+
 
 @onready var grid_map : GridMap = $GridMap
 
@@ -49,6 +51,16 @@ func _ready() -> void:
 	depot = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
 	grid_map.set_cell_item(depot, 73)
 	
+	var a_beaver : Dynamic_Unit = beaver.instantiate()
+	a_beaver.position = Vector3(2,2,4)
+	a_beaver.unitID = 1
+	add_child(a_beaver)
+	
+	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
+	a_squirrel.position = Vector3(4,2,4)
+	a_squirrel.unitID = 2
+	add_child(a_squirrel)
+	
 	var a_wolf : Dynamic_Unit = wolf.instantiate()
 	a_wolf.position = Vector3(1,2,1)
 	a_wolf.unitID = 3
@@ -59,10 +71,7 @@ func _ready() -> void:
 	a_bear.unitID = 4
 	add_child(a_bear)
 	
-	var a_beaver : Dynamic_Unit = beaver.instantiate()
-	a_beaver.position = Vector3(2,2,4)
-	a_beaver.unitID = 1
-	add_child(a_beaver)
+	
 	
 	pass # Replace with function body.
 
@@ -102,10 +111,17 @@ func select_node(event):
 			else:
 				temp_selection = null
 		
-		
-		if (temp_selection != null and event.button_index == 2 and temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
-			temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
-			
+		if (event.button_index == 2):
+			if (temp_selection != null):
+				if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
+					if (unit_script != null):
+						if (unit_script.get_global_name() == "Unit"):
+							temp_selection.attacking = result["collider"].get_parent()
+					else:
+						temp_selection.attacking = null
+				
+					temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
+
 	else:
 		if (event.button_index == 1):
 			temp_selection = null

@@ -1,0 +1,167 @@
+[gd_scene load_steps=22 format=3 uid="uid://c134u2auk0qib"]
+
+[ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_hixew"]
+[ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_txq0y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxuwv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bvoti"]
+size = Vector3(1.2, 1, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0sqdr"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdlsx"]
+albedo_color = Color(0.670453, 0.424804, 0.36687, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_posdr"]
+material = SubResource("StandardMaterial3D_xdlsx")
+radius = 0.05
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wokoi"]
+albedo_color = Color(0.770522, 0.521838, 0.462609, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dvqtg"]
+material = SubResource("StandardMaterial3D_wokoi")
+radius = 0.02
+height = 0.06
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4swe"]
+albedo_color = Color(0.300242, 0.168724, 0.138001, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1dsav"]
+material = SubResource("StandardMaterial3D_c4swe")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.005
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoly0"]
+albedo_color = Color(0.794595, 0.553322, 0.495629, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jcbib"]
+material = SubResource("StandardMaterial3D_aoly0")
+radius = 0.04
+height = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ws4b5"]
+albedo_color = Color(0.794595, 0.553322, 0.495629, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vvaan"]
+material = SubResource("StandardMaterial3D_ws4b5")
+radius = 0.03
+height = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cb23s"]
+albedo_color = Color(0.736404, 0.483236, 0.423223, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p6qle"]
+material = SubResource("StandardMaterial3D_cb23s")
+top_radius = 0.01
+bottom_radius = 0.01
+height = 0.003
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33qad"]
+albedo_color = Color(0.219501, 0.219501, 0.219501, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_wswu7"]
+material = SubResource("StandardMaterial3D_33qad")
+radius = 0.01
+height = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_st5st"]
+albedo_color = Color(0.642723, 0.402605, 0.346066, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_purgb"]
+material = SubResource("StandardMaterial3D_st5st")
+radius = 0.03
+height = 0.1
+
+[node name="Squirrel" type="Node3D"]
+script = ExtResource("1_hixew")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0.35, 0)
+physics_material_override = SubResource("PhysicsMaterial_cxuwv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-3.53188e-08, 0, -0.808, 0, 0.808, 0, 0.808, 0, -3.53188e-08, 1.93299e-09, -0.291365, -0.0221108)
+shape = SubResource("BoxShape3D_bvoti")
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_txq0y")]
+texture = SubResource("ViewportTexture_0sqdr")
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Pivot"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 0.07, 0)
+mesh = SubResource("CapsuleMesh_posdr")
+
+[node name="Leg_1" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(-4.37113e-08, -0.999999, -4.23516e-22, 0.999999, -4.37113e-08, 5.68434e-14, 9.9476e-14, -9.31736e-21, 1, -0.0376558, -0.0589499, 0.025)
+mesh = SubResource("CapsuleMesh_dvqtg")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Body/Leg_1"]
+transform = Transform3D(1, 1.42109e-14, -2.27374e-14, -1.42109e-14, 1, 6.77629e-22, 2.84218e-14, -8.47035e-22, 0.8, 0.0134183, 0.0259698, -1.86265e-09)
+mesh = SubResource("CylinderMesh_1dsav")
+
+[node name="Leg_2" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(-4.37113e-08, -0.999999, -4.23516e-22, 0.999999, -4.37113e-08, 5.68434e-14, 9.9476e-14, -9.31736e-21, 1, -0.038, -0.059, -0.025)
+mesh = SubResource("CapsuleMesh_dvqtg")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Body/Leg_2"]
+transform = Transform3D(1, 1.42109e-14, -2.27374e-14, -1.42109e-14, 1, 6.77629e-22, 2.84218e-14, -8.47035e-22, 0.8, 0.0134183, 0.0259698, -1.86265e-09)
+mesh = SubResource("CylinderMesh_1dsav")
+
+[node name="Leg_3" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(-4.37113e-08, -0.999999, -4.23516e-22, 0.999999, -4.37113e-08, 5.68434e-14, 9.9476e-14, -9.31736e-21, 1, -0.038, 0.059, 0.025)
+mesh = SubResource("CapsuleMesh_dvqtg")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Body/Leg_3"]
+transform = Transform3D(1, 1.42109e-14, -2.27374e-14, -1.42109e-14, 1, 6.77629e-22, 2.84218e-14, -8.47035e-22, 0.8, 0.0134183, 0.0259698, -1.86265e-09)
+mesh = SubResource("CylinderMesh_1dsav")
+
+[node name="Leg_4" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(-4.37113e-08, -0.999999, -4.23516e-22, 0.999999, -4.37113e-08, 5.68434e-14, 9.9476e-14, -9.31736e-21, 1, -0.038, 0.059, -0.025)
+mesh = SubResource("CapsuleMesh_dvqtg")
+
+[node name="Foot" type="MeshInstance3D" parent="Pivot/Body/Leg_4"]
+transform = Transform3D(1, 1.42109e-14, -2.27374e-14, -1.42109e-14, 1, 6.77629e-22, 2.84218e-14, -8.47035e-22, 0.8, 0.0134183, 0.0259698, -1.86265e-09)
+mesh = SubResource("CylinderMesh_1dsav")
+
+[node name="Head" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(0.999999, 2.13163e-14, -1.69407e-21, -2.13163e-14, 0.999999, 4.26326e-14, 5.0822e-21, 1.27898e-13, 1, 0.0237142, 0.0764216, -1.00215e-08)
+mesh = SubResource("SphereMesh_jcbib")
+
+[node name="Snout" type="MeshInstance3D" parent="Pivot/Body/Head"]
+transform = Transform3D(0.999999, 7.10543e-15, 0, -7.10543e-15, 0.999999, 0, 4.23516e-22, 0, 1, -0.00354562, 0.0133301, -1.74802e-09)
+mesh = SubResource("SphereMesh_vvaan")
+
+[node name="Ear_1" type="MeshInstance3D" parent="Pivot/Body/Head"]
+transform = Transform3D(1.3125, 0.216506, 0.433013, -0.649519, 0.75, 0.5, -0.324759, -0.625, 0.75, 0.0348108, 0.0053653, -0.027941)
+mesh = SubResource("CylinderMesh_p6qle")
+
+[node name="Ear_2" type="MeshInstance3D" parent="Pivot/Body/Head"]
+transform = Transform3D(1.3125, 0.216506, -0.433013, -0.649519, 0.75, -0.5, 0.324759, 0.625, 0.75, 0.035, 0.005, 0.028)
+mesh = SubResource("CylinderMesh_p6qle")
+
+[node name="Eye_1" type="MeshInstance3D" parent="Pivot/Body/Head"]
+transform = Transform3D(0.999999, 7.10543e-15, 0, -7.10543e-15, 0.999999, 0, 4.23516e-22, 0, 1, 0.0111344, 0.0255213, -0.0185166)
+mesh = SubResource("SphereMesh_wswu7")
+
+[node name="Eye_2" type="MeshInstance3D" parent="Pivot/Body/Head"]
+transform = Transform3D(0.999999, 7.10543e-15, 0, -7.10543e-15, 0.999999, 0, 4.23516e-22, 0, 1, 0.011, 0.026, 0.019)
+mesh = SubResource("SphereMesh_wswu7")
+
+[node name="Tail" type="MeshInstance3D" parent="Pivot/Body"]
+transform = Transform3D(0.342018, -0.939686, 1.27055e-21, 0.939686, 0.342018, 8.52651e-14, 5.68434e-14, 2.84217e-14, 1, 0.033309, -0.103374, 1.35558e-08)
+mesh = SubResource("SphereMesh_purgb")
+
+[node name="Tail" type="MeshInstance3D" parent="Pivot/Body/Tail"]
+transform = Transform3D(0.707103, -0.707101, 9.9476e-14, 0.707101, 0.707103, 3.23297e-13, 2.27374e-13, 1.77636e-13, 1, 0.0130753, -0.0307213, 8.66835e-09)
+mesh = SubResource("SphereMesh_purgb")
+
+[node name="Tail" type="MeshInstance3D" parent="Pivot/Body/Tail/Tail"]
+transform = Transform3D(0.342018, 0.939687, -1.42109e-14, -0.939687, 0.342018, 7.10543e-15, 7.10543e-15, 2.13163e-14, 1, -0.0231254, -0.0326797, 1.44056e-08)
+mesh = SubResource("SphereMesh_purgb")

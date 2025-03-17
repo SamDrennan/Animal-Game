@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1742134355
-bear.tscn::PackedScene::5854718542822789394::1742131354::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-beaver.tscn::PackedScene::4286326515075159074::1742131355::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-camera.tscn::PackedScene::9073626849291492281::1742131354::0::1::::<><>::res://Scripts/camera_pivot.gd
-health_bar.tscn::PackedScene::3367897684234045522::1742131355::0::1::::<><>::
+::res://::1742165483
+bear.tscn::PackedScene::5854718542822789394::1742134805::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+beaver.tscn::PackedScene::4286326515075159074::1742134806::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+camera.tscn::PackedScene::9073626849291492281::1742134805::0::1::::<><>::res://Scripts/camera_pivot.gd
+health_bar.tscn::PackedScene::3367897684234045522::1742134805::0::1::::<><>::
 icon.svg::CompressedTexture2D::4558128832728953608::1741481017::1742127199::1::::<><>::
-main.tscn::PackedScene::5497894077211875588::1742131354::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://5mrjj38glxv0::::res://TileSet.tres
-models.tscn::PackedScene::8079672866901922699::1742131355::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
+main.tscn::PackedScene::5497894077211875588::1742134805::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://5mrjj38glxv0::::res://TileSet.tres
+models.tscn::PackedScene::8079672866901922699::1742134806::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
 README.md::TextFile::-1::1741481017::0::1::::<><>::
-TileSet.tres::MeshLibrary::2131486620684384407::1742127244::0::1::::<><>::
-wolf.tscn::PackedScene::4549391083927992049::1742131355::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+TileSet.tres::MeshLibrary::2131486620684384407::1742134715::0::1::::<><>::
+wolf.tscn::PackedScene::4549391083927992049::1742134805::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
 ::res://animal pack/::1742127200
 fbx.fbx::PackedScene::4326998034577205847::1741777313::1742127200::1::::<><>::
 obj.obj::Mesh::7646209538035120016::1741777313::1742127199::1::::<><>::
@@ -17,10 +17,10 @@ obj.obj::Mesh::7646209538035120016::1741777313::1742127199::1::::<><>::
 BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741869485::1742127200::1::::<><>::
 frog.FBX::PackedScene::8653520198240445413::1741869485::1742127199::0::::<><>::
 ::res://Assets/animal pack/::1741869485
-::res://Scripts/::1742131343
+::res://Scripts/::1742134803
 camera_pivot.gd::GDScript::-1::1741481017::0::1::::<>Marker3D<>::
 dynamic_unit.gd::GDScript::-1::1742130746::0::1::::Dynamic_Unit<>Unit<>::
-main.gd::GDScript::-1::1742131343::0::1::::<>Node3D<>::
+main.gd::GDScript::-1::1742134803::0::1::::<>Node3D<>::
 static_unit.gd::GDScript::-1::1741778379::0::1::::Static_Unit<>Unit<>::
 tribe.gd::GDScript::-1::1741778725::0::1::::Tribe<>Node<>::
 unit.gd::GDScript::-1::1742127168::0::1::::Unit<>Node3D<>::
