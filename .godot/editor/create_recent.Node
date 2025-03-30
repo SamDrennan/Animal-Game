@@ -1,7 +1,9 @@
+Label
+Button
+TextureRect
+Panel
 MeshInstance3D
 Node3D
-Label
-Panel
 ProgressBar
 SubViewport
 Sprite3D

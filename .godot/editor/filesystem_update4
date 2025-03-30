@@ -1,12 +1,10 @@
-res://TileSet.tres
-res://main.tscn
-res://Scripts/main.gd
 res://camera.tscn
+res://TileSet.tres
 res://bear.tscn
+res://main.tscn
 res://wolf.tscn
 res://health_bar.tscn
 res://beaver.tscn
 res://models.tscn
-res://squirrel.tscn
-res://Scripts/dynamic_unit.gd
-res://Scripts/unit.gd
+res://control_interface.tscn
+res://mammal_tribe_info.tscn
