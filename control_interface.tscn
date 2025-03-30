@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkxqdektbsqt"]
+[gd_scene load_steps=10 format=3 uid="uid://bkxqdektbsqt"]
 
 [ext_resource type="Texture2D" uid="uid://ceywtv86idyid" path="res://ui_resources/action_select_plane.png" id="1_b42u7"]
+[ext_resource type="Script" path="res://control_interface.gd" id="1_ogr4j"]
 [ext_resource type="Texture2D" uid="uid://8ayrk5m3phm8" path="res://ui_resources/attack_icon.png" id="2_3njuw"]
 [ext_resource type="Texture2D" uid="uid://cyptbsds0yuoq" path="res://ui_resources/pick up_icon.png" id="3_7rfhd"]
 [ext_resource type="Texture2D" uid="uid://1qflmih00muo" path="res://ui_resources/extracting_icon.png" id="4_epojo"]
@@ -27,6 +28,7 @@ offset_right = 11.0
 offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ogr4j")
 
 [node name="control board" type="Panel" parent="."]
 layout_mode = 1
@@ -35,11 +37,11 @@ anchor_left = 0.5
 anchor_top = 0.998
 anchor_right = 0.5
 anchor_bottom = 0.998
-offset_left = -191.0
-offset_top = -205.704
-offset_right = -91.0
-offset_bottom = -157.704
-scale = Vector2(3.8, 3.8)
+offset_left = -250.0
+offset_top = -265.704
+offset_right = -150.0
+offset_bottom = -217.704
+scale = Vector2(5, 5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_r42j2")
 
 [node name="actions" type="GridContainer" parent="control board"]
@@ -96,3 +98,5 @@ icon = ExtResource("5_1sq3c")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[connection signal="button_down" from="control board/actions/attack" to="." method="_on_attack_button_down"]

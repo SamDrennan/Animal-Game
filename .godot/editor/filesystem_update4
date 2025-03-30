@@ -8,3 +8,7 @@ res://beaver.tscn
 res://models.tscn
 res://control_interface.tscn
 res://mammal_tribe_info.tscn
+res://mammal_tribe_info.gd
+res://control_interface.gd
+res://Scripts/main.gd
+res://Scripts/dynamic_unit.gd

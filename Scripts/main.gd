@@ -125,3 +125,7 @@ func select_node(event):
 	else:
 		if (event.button_index == 1):
 			temp_selection = null
+
+func attack_action():
+	if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
+		temp_selection.attack()
