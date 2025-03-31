@@ -13,6 +13,8 @@ const RAY_LENGTH = 1000.0
 
 var map_size = 10
 
+var pathing
+
 var temp_area
 var selection1
 var selection2
@@ -37,19 +39,33 @@ func _ready() -> void:
 	
 	var area = $area/Coll
 	temp_area = $area
-	area.scale.x = map_size
-	area.scale.z = map_size
+	area.shape.size.x = map_size
+	area.shape.size.z = map_size
 	area.position.x = map_size/2
 	area.position.z = map_size/2
+
+	pathing = AStarGrid2D.new()
+	pathing.size = Vector2i(map_size,map_size)
+	pathing.cell_size = Vector2i(1,1)
+	pathing.diagonal_mode = 2
+	pathing.update()
 	
 	selection1 = $s1
 	selection2 = $s2
 	
-	tree = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
-	grid_map.set_cell_item(tree, 100)
-	print(tree)
-	depot = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
-	grid_map.set_cell_item(depot, 73)
+	var r
+	
+	r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
+	tree.append( r )
+	grid_map.set_cell_item(r, 100)
+	pathing.set_point_solid(Vector2i(r.x, r.z))
+	#print(tree)
+	
+	for i in range(10):
+		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
+		depot.append(r)
+		grid_map.set_cell_item(r, 73)
+		pathing.set_point_solid(Vector2i(r.x, r.z))
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
 	a_beaver.position = Vector3(2,2,4)
@@ -120,7 +136,9 @@ func select_node(event):
 					else:
 						temp_selection.attacking = null
 				
-					temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
+					print(pathing.get_id_path(Vector2i(temp_selection.position.x, temp_selection.position.z), Vector2i(result["position"].x, result["position"].z)))
+					temp_selection.set_path( pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(result["position"].x, result["position"].z)) )
+					#temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
 
 	else:
 		if (event.button_index == 1):
