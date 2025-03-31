@@ -21,8 +21,8 @@ var selection2
 
 var temp_selection
 
-var tree
-var depot
+var tree = []
+var depot = []
 
 # split wood instances into forests which will be groups of trees
 
@@ -57,14 +57,14 @@ func _ready() -> void:
 	
 	r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
 	tree.append( r )
-	grid_map.set_cell_item(r, 100)
+	grid_map.set_cell_item(r, 2)
 	pathing.set_point_solid(Vector2i(r.x, r.z))
 	#print(tree)
 	
 	for i in range(10):
 		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
 		depot.append(r)
-		grid_map.set_cell_item(r, 73)
+		grid_map.set_cell_item(r, 1)
 		pathing.set_point_solid(Vector2i(r.x, r.z))
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
