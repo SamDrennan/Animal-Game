@@ -60,6 +60,25 @@ func attack(delta: float) -> void:
 	
 	
 func move(delta: float) -> void:
+	#var direction = self.position.direction_to(destination).normalized()
+	#var dist = position.distance_to(destination)
+	#
+	#if (destination != self.position):
+		
+		#velocity.x = direction.x * delta * speed
+		#velocity.z = direction.z * delta * speed
+		#
+		#if (self.position.distance_to(destination) < velocity.distance_to(destination)):
+			#self.position = destination
+			#velocity = Vector3()
+			#
+		#else:
+			#self.basis = Basis.looking_at(direction)
+			#
+	#elif path.size() > 0:
+		#destination = Vector3(path[0].x + .5, 1, path[0].y  + .5)
+		#path.pop_front() 
+		
 	if (destination != self.position):
 		var direction = self.position.direction_to(destination)
 		var translation = direction*speed*delta
