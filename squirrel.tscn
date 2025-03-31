@@ -1,12 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c134u2auk0qib"]
+[gd_scene load_steps=21 format=3 uid="uid://c134u2auk0qib"]
 
-[ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_hixew"]
+[ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_24j8j"]
 [ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_txq0y"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxuwv"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_bvoti"]
-size = Vector3(1.2, 1, 0.5)
+size = Vector3(1.39857, 1.07031, 0.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0sqdr"]
 viewport_path = NodePath("SubViewport")
@@ -77,15 +75,11 @@ material = SubResource("StandardMaterial3D_st5st")
 radius = 0.03
 height = 0.1
 
-[node name="Squirrel" type="Node3D"]
-script = ExtResource("1_hixew")
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_24j8j")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0.35, 0)
-physics_material_override = SubResource("PhysicsMaterial_cxuwv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(-3.53188e-08, 0, -0.808, 0, 0.808, 0, 0.808, 0, -3.53188e-08, 1.93299e-09, -0.291365, -0.0221108)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.76594e-08, 0, 0.404, 0, 0.404, 0, -0.404, 0, -1.76594e-08, 3.99987e-10, 0.218521, 0.020206)
 shape = SubResource("BoxShape3D_bvoti")
 
 [node name="Sprite3D" parent="." instance=ExtResource("2_txq0y")]
