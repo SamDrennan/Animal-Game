@@ -118,14 +118,23 @@ func select_node(event):
 		selection1.position = Vector3( ceil(new_pos.x + .5) - .5, 1, ceil(new_pos.z + .5) - .5)
 
 
-		var unit_script : Script = result["collider"].get_parent().get_script().get_base_script()
+		#var unit_script : Script = result["collider"].get_parent().get_script().get_base_script()
+		var unit_script = result["collider"].get_script()
 		
 		if (event.button_index == 1):
 			if (unit_script != null):
-				if (unit_script.get_global_name() == "Unit"):
-					temp_selection = result["collider"].get_parent()
+				print(result["collider"].get_script().get_global_name())
+				if (unit_script.get_global_name() == "Dynamic_Unit"):
+					temp_selection = result["collider"]
 			else:
 				temp_selection = null
+		
+		#if (event.button_index == 1):
+			#if (unit_script != null):
+				#if (unit_script.get_global_name() == "Unit"):
+					#temp_selection = result["collider"].get_parent()
+			#else:
+				#temp_selection = null
 		
 		if (event.button_index == 2):
 			if (temp_selection != null):
