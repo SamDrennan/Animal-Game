@@ -10,6 +10,7 @@ var damage: int = 1
 var isBled: bool
 var cooldown: float = 0
 
+var path
 
 func _init():
 	# set super value
@@ -17,6 +18,8 @@ func _init():
 
 func _ready() -> void:
 	destination = self.position
+	path = []
+	
 	var label = $Sprite3D/SubViewport/Panel/Label
 	match unitID:
 		1:
@@ -55,6 +58,7 @@ func attack(delta: float) -> void:
 		else:
 			destination = attacking.position
 	
+	
 func move(delta: float) -> void:
 	if (destination != self.position):
 		var direction = self.position.direction_to(destination)
@@ -66,6 +70,14 @@ func move(delta: float) -> void:
 		else:
 			self.position += translation
 			self.basis = Basis.looking_at(direction)
+	elif path.size() > 0:
+		destination = Vector3(path[0].x + .5, 1, path[0].y  + .5)
+		path.pop_front()
+
+func set_path(p):
+	p.pop_front()
+	path = p
+	pass
 
 func attack_animation() -> void:
 	pass
