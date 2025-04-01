@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bkxqdektbsqt"]
 
 [ext_resource type="Texture2D" uid="uid://ceywtv86idyid" path="res://ui_resources/action_select_plane.png" id="1_b42u7"]
-[ext_resource type="Script" path="res://control_interface.gd" id="1_ogr4j"]
+[ext_resource type="Script" path="res://Scripts/control_interface.gd" id="1_ogr4j"]
 [ext_resource type="Texture2D" uid="uid://8ayrk5m3phm8" path="res://ui_resources/attack_icon.png" id="2_3njuw"]
 [ext_resource type="Texture2D" uid="uid://cyptbsds0yuoq" path="res://ui_resources/pick up_icon.png" id="3_7rfhd"]
 [ext_resource type="Texture2D" uid="uid://1qflmih00muo" path="res://ui_resources/extracting_icon.png" id="4_epojo"]

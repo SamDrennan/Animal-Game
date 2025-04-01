@@ -11,7 +11,7 @@ var bear = preload("res://bear.tscn")
 
 const RAY_LENGTH = 1000.0
 
-var map_size = 10
+var map_size = 100
 
 var pathing
 
@@ -32,7 +32,7 @@ func _ready() -> void:
 	grid_map.clear()
 	
 	for i in range(map_size):
-		for j in range(map_size):
+		for j in range(map_size/2):
 			grid_map.set_cell_item(Vector3i(i,0,j), 0)
 	
 	print("here")
@@ -55,14 +55,14 @@ func _ready() -> void:
 	
 	var r
 	
-	r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
+	r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
 	tree.append( r )
 	grid_map.set_cell_item(r, 2)
 	pathing.set_point_solid(Vector2i(r.x, r.z))
 	#print(tree)
 	
 	for i in range(10):
-		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size - 1))
+		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
 		depot.append(r)
 		grid_map.set_cell_item(r, 1)
 		pathing.set_point_solid(Vector2i(r.x, r.z))
