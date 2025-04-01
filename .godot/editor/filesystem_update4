@@ -11,3 +11,4 @@ res://models.tscn
 res://mammal_tribe_info.tscn
 res://main.tscn
 res://Scripts/main.gd
+res://Scripts/dynamic_unit.gd

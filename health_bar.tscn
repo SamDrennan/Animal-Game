@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn8o1u6ki8j2q"]
+[gd_scene load_steps=3 format=3 uid="uid://bn8o1u6ki8j2q"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ffggp"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy4vk"]
+bg_color = Color(0.743915, 0.138925, 0.0180251, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Sprite3D" type="Sprite3D"]
 billboard = 1
@@ -19,17 +26,21 @@ offset_top = 40.0
 offset_right = 99.0
 offset_bottom = 67.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_xy4vk")
 
 [node name="Panel" type="Panel" parent="SubViewport"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -96.0
+offset_right = -96.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="SubViewport/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 1.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1

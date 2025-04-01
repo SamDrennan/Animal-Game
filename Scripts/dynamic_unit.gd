@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
 	
 	move(delta)
-	#attack(delta)
+	attack(delta)
 	
 	super._process(delta)
 	
