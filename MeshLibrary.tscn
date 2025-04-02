@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyndeknsviv5k"]
+
+[ext_resource type="ArrayMesh" uid="uid://bala4qxyagjoo" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj" id="1_i0msb"]
+[ext_resource type="ArrayMesh" uid="uid://bw2qcrj7bq12y" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj" id="2_mm433"]
+[ext_resource type="ArrayMesh" uid="uid://deyfcj85lxdsw" path="res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj" id="3_andkr"]
+[ext_resource type="ArrayMesh" uid="uid://bn1sdv5ftih4y" path="res://Assets/kenney_nature-kit/Models/OBJ format/ground_riverBend.obj" id="4_owc8h"]
+[ext_resource type="ArrayMesh" uid="uid://dd083a4pyt4fv" path="res://Assets/kenney_nature-kit/Models/OBJ format/ground_riverRocks.obj" id="5_cctar"]
+[ext_resource type="ArrayMesh" uid="uid://cf8to0vsmhv7j" path="res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj" id="6_h58aa"]
+[ext_resource type="ArrayMesh" uid="uid://kokrs7vrmjps" path="res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj" id="7_3jx2w"]
+[ext_resource type="ArrayMesh" uid="uid://duwr2tyxrqavw" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj" id="8_507ma"]
+[ext_resource type="ArrayMesh" uid="uid://dffy3n30cni6d" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj" id="9_3ir4u"]
+[ext_resource type="ArrayMesh" uid="uid://ctx70ou5e87b3" path="res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj" id="10_0tfye"]
+[ext_resource type="ArrayMesh" uid="uid://8eohidnol5ph" path="res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj" id="11_h23ot"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CliffBlockRock" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34106, 0, 0.0808105)
+mesh = ExtResource("1_i0msb")
+
+[node name="CliffBlockStone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101135, 0, 0.0808105)
+mesh = ExtResource("2_mm433")
+
+[node name="FlowerPurpleA" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101135, 0, 0.94165)
+mesh = ExtResource("3_andkr")
+
+[node name="GroundRiverBend" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18451, 0, 0.0808105)
+mesh = ExtResource("4_owc8h")
+
+[node name="GroundRiverRocks" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3114, 0, 0.0808105)
+mesh = ExtResource("5_cctar")
+
+[node name="LogStack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101135, 0, 1.66064)
+mesh = ExtResource("6_h58aa")
+
+[node name="RockTallF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3678, 0, 2.12085)
+mesh = ExtResource("7_3jx2w")
+
+[node name="StoneLargeF" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03156, 0, 1.51105)
+mesh = ExtResource("8_507ma")
+
+[node name="StoneTallB" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3385, 0, 2.73651)
+mesh = ExtResource("9_3ir4u")
+
+[node name="TentDetailedOpen" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.101135, 0, 3.04382)
+mesh = ExtResource("10_0tfye")
+
+[node name="TreeConeFall" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999996, 0, -0.0026529, 0, 1, 0, 0.0026529, 0, 0.999996, 1.36194, 0, 1.38824)
+mesh = ExtResource("11_h23ot")
