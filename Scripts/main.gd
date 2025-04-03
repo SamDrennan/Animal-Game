@@ -23,7 +23,9 @@ var temp_selection
 
 var tree = []
 var depot = []
-
+var herb = []
+var stone=[]
+var mud= []
 # split wood instances into forests which will be groups of trees
 
 
@@ -55,17 +57,116 @@ func _ready() -> void:
 	
 	var r
 	
-	r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
-	tree.append( r )
-	grid_map.set_cell_item(r, 2)
-	pathing.set_point_solid(Vector2i(r.x, r.z))
-	#print(tree)
+	#r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
+	#tree.append( r )
+	#grid_map.set_cell_item(r, 10)
+	#pathing.set_point_solid(Vector2i(r.x, r.z))
+	##print(tree)
 	
+	#tent
+	var tentposition1=Vector3i(map_size*2/10,1,map_size*2/10)
+	grid_map.set_cell_item(tentposition1, 9)
+	pathing.set_point_solid(Vector2i(tentposition1.x, tentposition1.z))
+	var tentposition2=Vector3i(map_size*8/10,1,map_size*3/10)
+	grid_map.set_cell_item(tentposition2, 9)
+	pathing.set_point_solid(Vector2i(tentposition2.x, tentposition2.z))
+	
+	#log
 	for i in range(10):
 		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
 		depot.append(r)
-		grid_map.set_cell_item(r, 1)
+		grid_map.set_cell_item(r, 5)#logStack
 		pathing.set_point_solid(Vector2i(r.x, r.z))
+	#stone
+	for i in range(10):
+		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
+		stone.append(r)
+		grid_map.set_cell_item(r, 2)#stone
+		pathing.set_point_solid(Vector2i(r.x, r.z))
+	
+	
+	#herb
+	for i in range(10):
+		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
+		herb.append(r)
+		grid_map.set_cell_item(r, 7)#herb
+		pathing.set_point_solid(Vector2i(r.x, r.z))
+	
+	#mud
+	for i in range(10):
+		r = Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
+		mud.append(r)
+		grid_map.set_cell_item(r, 6)#mud
+		pathing.set_point_solid(Vector2i(r.x, r.z))
+		
+	#mountain
+	var size = 10  
+	var layers = 5
+	
+	for layer in range(1,layers+1):  
+		
+		var start = layer
+		var end = size - layer - 1
+
+		for x in range(start, end + 1):
+			for z in range(start, end + 1):
+				var position1 = Vector3i(x+map_size*6/10, layer, z+map_size*0/10)
+				var position2 = Vector3i(x+map_size*5/10, layer, z+map_size*1/10)
+				var position3 = Vector3i(x+map_size*4/10, layer, z+map_size*3/10)
+				var position4 = Vector3i(x+map_size*3/10, layer, z+map_size*4/10)
+
+
+				grid_map.set_cell_item(position1, 1,1)
+				grid_map.set_cell_item(position2, 1,1)  
+				grid_map.set_cell_item(position3, 1,1)
+				grid_map.set_cell_item(position4, 1,1)  
+				if layer == 1:
+					pathing.set_point_solid(Vector2i(position1.x, position1.z))
+					pathing.set_point_solid(Vector2i(position2.x, position1.z))
+					pathing.set_point_solid(Vector2i(position3.x, position1.z))
+					pathing.set_point_solid(Vector2i(position4.x, position1.z))
+	
+	#forest
+	var forest_size=25
+	
+	for i in range(25):
+		var treeposition1 = Vector3i(randi_range(map_size*2.5/10,map_size*2.5/10+forest_size),1,
+		randi_range(map_size*0/10,map_size*0/10+forest_size))
+		tree.append(treeposition1)
+		grid_map.set_cell_item(treeposition1, 10)#tree
+		pathing.set_point_solid(Vector2i(treeposition1.x, treeposition1.z))
+		var treeposition2 = Vector3i(randi_range(map_size*5/10,map_size*5/10+forest_size),1,
+		randi_range(map_size*2.5/10,map_size*2.5/10+forest_size))
+		tree.append(treeposition2)
+		grid_map.set_cell_item(treeposition2, 10)#tree
+		pathing.set_point_solid(Vector2i(treeposition2.x, treeposition2.z))
+	
+	#quarry
+	var quarry_size =20
+	var mud_stone_num=5
+	for i in range(mud_stone_num):
+		var mud_position1=Vector3i(randi_range(map_size*2/10,map_size*2/10+quarry_size),1,
+		randi_range(map_size*2.5/10,map_size*2.5/10+quarry_size))
+		mud.append(mud_position1)
+		grid_map.set_cell_item(mud_position1, 6)#mud
+		pathing.set_point_solid(Vector2i(mud_position1.x, mud_position1.z))
+		var mud_position2=Vector3i(randi_range(map_size*6/10,map_size*6/10+quarry_size),1,
+		randi_range(map_size*1/10,map_size*1/10+quarry_size))
+		mud.append(mud_position2)
+		grid_map.set_cell_item(mud_position2, 6)#mud
+		pathing.set_point_solid(Vector2i(mud_position2.x, mud_position2.z))
+		
+		var stone_position1=Vector3i(randi_range(map_size*2/10,map_size*2/10+quarry_size),1,
+		randi_range(map_size*2.5/10,map_size*2.5/10+quarry_size))
+		stone.append(stone_position1)
+		grid_map.set_cell_item(stone_position1, 7)#mud
+		pathing.set_point_solid(Vector2i(stone_position1.x, stone_position1.z))
+		var stone_position2=Vector3i(randi_range(map_size*6/10,map_size*6/10+quarry_size),1,
+		randi_range(map_size*1/10,map_size*1/10+quarry_size))
+		stone.append(stone_position2)
+		grid_map.set_cell_item(stone_position2, 7)#mud
+		pathing.set_point_solid(Vector2i(stone_position2.x, stone_position2.z))
+	
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
 	a_beaver.position = Vector3(2,2,4)

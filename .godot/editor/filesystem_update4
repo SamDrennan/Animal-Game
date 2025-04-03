@@ -1,11 +1,11 @@
-res://main.tscn
+res://camera.tscn
 res://Bear.tres
 res://Wolf.tres
-res://TileSet.tres
-res://camera.tscn
+res://MeshLibaray.tres
 res://bear.tscn
 res://wolf.tscn
 res://health_bar.tscn
-res://beaver.tscn
 res://mammal_tribe_info.tscn
-res://control_interface.tscn
+res://main.tscn
+res://MeshLibrary.tscn
+res://Scripts/main.gd
