@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b2clf3hgm1cw5"]
+[gd_scene load_steps=23 format=3 uid="uid://b2clf3hgm1cw5"]
 
 [ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_k51xb"]
 [ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_apvv5"]
@@ -73,6 +73,15 @@ size = Vector3(0.379456, 0.5, 0.763916)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_656p0"]
 viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gtny"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_em22v"]
+material = SubResource("StandardMaterial3D_3gtny")
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.001
 
 [node name="Beaver" type="CharacterBody3D"]
 script = ExtResource("1_k51xb")
@@ -154,3 +163,7 @@ shape = SubResource("BoxShape3D_4hxt6")
 
 [node name="Sprite3D" parent="." instance=ExtResource("2_apvv5")]
 texture = SubResource("ViewportTexture_656p0")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_em22v")

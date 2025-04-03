@@ -34,17 +34,17 @@ func _ready() -> void:
 	grid_map.clear()
 	
 	for i in range(map_size):
-		for j in range(map_size/2):
+		for j in range(map_size/2 + 1):
 			grid_map.set_cell_item(Vector3i(i,0,j), 0)
 	
 	print("here")
 	
-	var area = $area/Coll
-	temp_area = $area
-	area.shape.size.x = map_size
-	area.shape.size.z = map_size
-	area.position.x = map_size/2
-	area.position.z = map_size/2
+	#var area = $area/Coll
+	#temp_area = $area
+	#area.shape.size.x = map_size
+	#area.shape.size.z = map_size/2
+	#area.position.x = map_size/2
+	#area.position.z = map_size/2
 
 	pathing = AStarGrid2D.new()
 	pathing.size = Vector2i(map_size,map_size)
@@ -169,35 +169,33 @@ func _ready() -> void:
 	
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
-	a_beaver.position = Vector3(2,2,4)
+	a_beaver.position = Vector3(2,1,4)
 	a_beaver.unitID = 1
+	a_beaver.set_team(2)
 	add_child(a_beaver)
 	
 	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
-	a_squirrel.position = Vector3(4,2,4)
+	a_squirrel.position = Vector3(4,1,4)
 	a_squirrel.unitID = 2
+	a_squirrel.set_team(2)
 	add_child(a_squirrel)
 	
 	var a_wolf : Dynamic_Unit = wolf.instantiate()
-	a_wolf.position = Vector3(1,2,1)
+	a_wolf.position = Vector3(1,1,1)
 	a_wolf.unitID = 3
+	a_wolf.set_team(1)
 	add_child(a_wolf)
 	
 	var a_bear : Dynamic_Unit = bear.instantiate()
-	a_bear.position = Vector3(4,2,2)
+	a_bear.position = Vector3(4,1,2)
 	a_bear.unitID = 4
+	a_bear.set_team(1)
 	add_child(a_bear)
-	
-	
-	
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if not Engine.is_editor_hint():
-		if Input.is_action_pressed("select_cat"):
-			temp_selection = $a_Cat
+	pass
 		
 	
 func _input(event):
@@ -214,9 +212,9 @@ func select_node(event):
 	print(result)
 	
 	if result.size() > 0:
-		selection2.position = selection1.position
-		var new_pos = result["position"]
-		selection1.position = Vector3( ceil(new_pos.x + .5) - .5, 1, ceil(new_pos.z + .5) - .5)
+		#selection2.position = selection1.position
+		#var new_pos = result["position"]
+		#selection1.position = Vector3( ceil(new_pos.x + .5) - .5, 1, ceil(new_pos.z + .5) - .5)
 
 
 		#var unit_script : Script = result["collider"].get_parent().get_script().get_base_script()
@@ -226,10 +224,16 @@ func select_node(event):
 			if (unit_script != null):
 				print(result["collider"].get_script().get_global_name())
 				if (unit_script.get_global_name() == "Dynamic_Unit"):
+					if (temp_selection != null):
+						temp_selection.selected = false
 					temp_selection = result["collider"]
+					temp_selection.selected = true
 			else:
+				if (temp_selection != null):
+					temp_selection.selected = false
 				temp_selection = null
-		
+			
+			
 		#if (event.button_index == 1):
 			#if (unit_script != null):
 				#if (unit_script.get_global_name() == "Unit"):
@@ -241,8 +245,8 @@ func select_node(event):
 			if (temp_selection != null):
 				if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
 					if (unit_script != null):
-						if (unit_script.get_global_name() == "Unit"):
-							temp_selection.attacking = result["collider"].get_parent()
+						if (unit_script.get_base_script().get_global_name() == "Unit"):
+							temp_selection.attacking = result["collider"]
 					else:
 						temp_selection.attacking = null
 				
@@ -252,6 +256,8 @@ func select_node(event):
 
 	else:
 		if (event.button_index == 1):
+			if (temp_selection != null):
+				temp_selection.selected = false
 			temp_selection = null
 
 func attack_action():

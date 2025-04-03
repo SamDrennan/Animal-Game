@@ -1,10 +1,10 @@
+MeshInstance3D
 ProgressBar
 TextureProgressBar
 Label
 Button
 TextureRect
 Panel
-MeshInstance3D
 Node3D
 SubViewport
 Sprite3D

@@ -7,6 +7,6 @@ transform = Transform3D(0.707107, -0.40558, 0.579228, 0, 0.819152, 0.573577, -0.
 script = ExtResource("1_nu6qg")
 
 [node name="Camera2" type="Camera3D" parent="."]
-transform = Transform3D(0.717421, 0.399576, -0.570653, -0.399576, 0.907034, 0.132769, 0.570653, 0.132768, 0.810387, -21.5936, 8.29693, 48.8517)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 30)
 projection = 1
-size = 13.0
+size = 18.0

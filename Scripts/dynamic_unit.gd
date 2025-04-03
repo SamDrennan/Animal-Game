@@ -42,21 +42,22 @@ func _process(delta: float) -> void:
 	
 func _physics_process(delta: float) -> void:
 	
-	if (self.position.y >= 1 + (5 * delta)): # If in the air, fall towards the floor. Literally gravity
-		self.position.y = self.position.y - (5 * delta)
-		self.destination.y = self.position.y
+	#if (self.position.y >= 1 + (5 * delta)): # If in the air, fall towards the floor. Literally gravity
+	#	self.position.y = self.position.y - (5 * delta)
+	#	self.destination.y = self.position.y
+	pass
 			
 func attack(delta: float) -> void:
 	if (attacking != null):
-		if ((attacking.position - self.position).length() < 1):
+		if (self.team == attacking.team):
+			attacking = null
+		elif ((attacking.position - self.position).length() < 1):
 			destination = self.position
 			if (cooldown <= 0):
 				attacking.health -= self.damage
 				cooldown = 1
 			else:
 				cooldown -= delta
-		else:
-			destination = attacking.position
 	
 	
 func move(delta: float) -> void:

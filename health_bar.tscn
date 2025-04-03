@@ -1,7 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bn8o1u6ki8j2q"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ffggp"]
-viewport_path = NodePath("SubViewport")
+[ext_resource type="Texture2D" uid="uid://bqr60q52e8os6" path="res://health_bar.tres" id="1_wrrnl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy4vk"]
 bg_color = Color(0.743915, 0.138925, 0.0180251, 1)
@@ -12,7 +11,7 @@ corner_radius_bottom_left = 10
 
 [node name="Sprite3D" type="Sprite3D"]
 billboard = 1
-texture = SubResource("ViewportTexture_ffggp")
+texture = ExtResource("1_wrrnl")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true

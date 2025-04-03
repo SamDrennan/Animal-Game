@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5202oj2rco46"]
+[gd_scene load_steps=8 format=3 uid="uid://b5202oj2rco46"]
 
 [ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_rcvbo"]
 [ext_resource type="ArrayMesh" uid="uid://3jhvedajvfs" path="res://Wolf.tres" id="2_rls50"]
@@ -10,18 +10,30 @@ size = Vector3(3.28845, 1.31519, 0.499023)
 [sub_resource type="ViewportTexture" id="ViewportTexture_fcm5y"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3wev"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gwgrb"]
+material = SubResource("StandardMaterial3D_p3wev")
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.001
+
 [node name="Wolf" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22779, 0)
 script = ExtResource("1_rcvbo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0.00204663, 0.211048, -0.193343)
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0.00204663, 0.43101, -0.193343)
 mesh = ExtResource("2_rls50")
 skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 7.3954e-05, 0.0998928, -0.0985838)
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 7.3954e-05, 0.331383, -0.0985838)
 shape = SubResource("BoxShape3D_r17mm")
 
 [node name="Sprite3D" parent="." instance=ExtResource("2_t8xc7")]
 texture = SubResource("ViewportTexture_fcm5y")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_gwgrb")

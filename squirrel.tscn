@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c134u2auk0qib"]
+[gd_scene load_steps=23 format=3 uid="uid://c134u2auk0qib"]
 
 [ext_resource type="Script" path="res://Scripts/dynamic_unit.gd" id="1_24j8j"]
 [ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_txq0y"]
@@ -75,7 +75,16 @@ material = SubResource("StandardMaterial3D_st5st")
 radius = 0.03
 height = 0.1
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oyswu"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_a0csd"]
+material = SubResource("StandardMaterial3D_oyswu")
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.001
+
+[node name="Squirrel" type="CharacterBody3D"]
 script = ExtResource("1_24j8j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -159,3 +168,7 @@ mesh = SubResource("SphereMesh_purgb")
 [node name="Tail" type="MeshInstance3D" parent="Pivot/Body/Tail/Tail"]
 transform = Transform3D(0.342018, 0.939687, -1.42109e-14, -0.939687, 0.342018, 7.10543e-15, 7.10543e-15, 2.13163e-14, 1, -0.0231254, -0.0326797, 1.44056e-08)
 mesh = SubResource("SphereMesh_purgb")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_a0csd")

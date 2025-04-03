@@ -9,3 +9,8 @@ res://mammal_tribe_info.tscn
 res://main.tscn
 res://MeshLibrary.tscn
 res://Scripts/main.gd
+res://beaver.tscn
+res://squirrel.tscn
+res://highlight.gdshader
+res://Scripts/unit.gd
+res://Scripts/dynamic_unit.gd
