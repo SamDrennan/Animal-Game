@@ -1,11 +1,11 @@
-@tool
+
 extends Node3D
 
 var beaver = preload("res://beaver.tscn")
 var squirrel = preload("res://squirrel.tscn")
 var wolf = preload("res://wolf.tscn")
 var bear = preload("res://bear.tscn")
-
+var tent = preload("res://tent.tscn")
 
 @onready var grid_map : GridMap = $GridMap
 
@@ -67,9 +67,22 @@ func _ready() -> void:
 	var tentposition1=Vector3i(map_size*2/10,1,map_size*2/10)
 	grid_map.set_cell_item(tentposition1, 9)
 	pathing.set_point_solid(Vector2i(tentposition1.x, tentposition1.z))
+	
+	var a_tent : Static_Unit = tent.instantiate()
+	a_tent.set_static_position(Vector3(tentposition1.x + 0.5,tentposition1.y,tentposition1.z + 0.5))
+	a_tent.unitID = 1
+	a_tent.set_team(1)
+	add_child(a_tent)
+	
 	var tentposition2=Vector3i(map_size*8/10,1,map_size*3/10)
 	grid_map.set_cell_item(tentposition2, 9)
 	pathing.set_point_solid(Vector2i(tentposition2.x, tentposition2.z))
+	
+	var a_tent_2 : Static_Unit = tent.instantiate()
+	a_tent_2.set_static_position(Vector3(tentposition2.x + 0.5,tentposition2.y,tentposition2.z + 0.5))
+	a_tent_2.unitID = 1
+	a_tent_2.set_team(2)
+	add_child(a_tent_2)
 	
 	#log
 	for i in range(10):
@@ -169,25 +182,25 @@ func _ready() -> void:
 	
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
-	a_beaver.position = Vector3(2,1,4)
+	a_beaver.position = Vector3(2.5,1,4.5)
 	a_beaver.unitID = 1
 	a_beaver.set_team(2)
 	add_child(a_beaver)
 	
 	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
-	a_squirrel.position = Vector3(4,1,4)
+	a_squirrel.position = Vector3(4.5,1,4.5)
 	a_squirrel.unitID = 2
 	a_squirrel.set_team(2)
 	add_child(a_squirrel)
 	
 	var a_wolf : Dynamic_Unit = wolf.instantiate()
-	a_wolf.position = Vector3(1,1,1)
+	a_wolf.position = Vector3(1.5,1,1.5)
 	a_wolf.unitID = 3
 	a_wolf.set_team(1)
 	add_child(a_wolf)
 	
 	var a_bear : Dynamic_Unit = bear.instantiate()
-	a_bear.position = Vector3(4,1,2)
+	a_bear.position = Vector3(4.5,1,2.5)
 	a_bear.unitID = 4
 	a_bear.set_team(1)
 	add_child(a_bear)
@@ -195,7 +208,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_released("ability_1"):
+		if (temp_selection != null):
+			if (temp_selection.get_script().get_global_name() == "Static_Unit"):
+				temp_selection.spawn1()
+	if Input.is_action_just_released("ability_2"):
+		if (temp_selection != null):
+			if (temp_selection.get_script().get_global_name() == "Static_Unit"):
+				temp_selection.spawn2()
 		
 	
 func _input(event):
@@ -223,7 +243,7 @@ func select_node(event):
 		if (event.button_index == 1):
 			if (unit_script != null):
 				print(result["collider"].get_script().get_global_name())
-				if (unit_script.get_global_name() == "Dynamic_Unit"):
+				if (unit_script.get_base_script().get_global_name() == "Unit"):
 					if (temp_selection != null):
 						temp_selection.selected = false
 					temp_selection = result["collider"]
@@ -244,14 +264,30 @@ func select_node(event):
 		if (event.button_index == 2):
 			if (temp_selection != null):
 				if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
+					var dest_x = result["position"].x
+					var dest_z = result["position"].z
 					if (unit_script != null):
 						if (unit_script.get_base_script().get_global_name() == "Unit"):
+							
 							temp_selection.attacking = result["collider"]
+							
+							var x_comp = result["collider"].position.x - temp_selection.position.x
+							var z_comp = result["collider"].position.z - temp_selection.position.z
+							
+							if (x_comp > 0.5):
+								dest_x = result["collider"].position.x - 1
+							elif (x_comp < -0.5):
+								dest_x = result["collider"].position.x + 1
+							if (z_comp > 0.5):
+								dest_z = result["collider"].position.z - 1
+							elif (z_comp < -0.5):
+								dest_z = result["collider"].position.z + 1
 					else:
 						temp_selection.attacking = null
 				
 					print(pathing.get_id_path(Vector2i(temp_selection.position.x, temp_selection.position.z), Vector2i(result["position"].x, result["position"].z)))
-					temp_selection.set_path( pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(result["position"].x, result["position"].z)) )
+					print(pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(dest_x, dest_z)))
+					temp_selection.set_path( pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(dest_x, dest_z)) )
 					#temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
 
 	else:

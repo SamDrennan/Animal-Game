@@ -10,11 +10,11 @@ size = Vector3(3.28845, 1.31519, 0.499023)
 [sub_resource type="ViewportTexture" id="ViewportTexture_fcm5y"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3wev"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfowj"]
 albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gwgrb"]
-material = SubResource("StandardMaterial3D_p3wev")
+material = SubResource("StandardMaterial3D_pfowj")
 top_radius = 0.7
 bottom_radius = 0.7
 height = 0.001

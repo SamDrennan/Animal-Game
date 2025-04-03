@@ -6,7 +6,7 @@ var unitID: int # 1 = Beaver, 2 = Squirrel, 3 = Wolf/cat for now, 4 = Bear
 var destination: Vector3
 var attacking: Unit
 var speed: int = 3
-var damage: int = 1
+var damage: int = 10
 var isBled: bool
 var cooldown: float = 0
 
@@ -48,16 +48,17 @@ func _physics_process(delta: float) -> void:
 	pass
 			
 func attack(delta: float) -> void:
+	
+	if (cooldown > 0):
+		cooldown -= delta
+		
 	if (attacking != null):
 		if (self.team == attacking.team):
 			attacking = null
-		elif ((attacking.position - self.position).length() < 1):
-			destination = self.position
-			if (cooldown <= 0):
-				attacking.health -= self.damage
-				cooldown = 1
-			else:
-				cooldown -= delta
+		elif (cooldown <= 0 and (attacking.position - self.position).length() < 1.5):
+			attacking.health -= self.damage
+			cooldown = 1
+			
 	
 	
 func move(delta: float) -> void:

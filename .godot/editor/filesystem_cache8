@@ -1,37 +1,40 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743667138
-Bear.tres::ArrayMesh::19377954395789128::1743667097::0::1::::<><>::
-bear.tscn::PackedScene::1600873092948133524::1743667120::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://jnff2i71vkq::::res://Bear.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-beaver.tscn::PackedScene::4286326515075159074::1743667097::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-camera.tscn::PackedScene::9073626849291492281::1743667120::0::1::::<><>::res://Scripts/camera_pivot.gd
+::res://::1743684888
+Bear.tres::ArrayMesh::19377954395789128::1743670188::0::1::::<><>::
+bear.tscn::PackedScene::1600873092948133524::1743684869::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://jnff2i71vkq::::res://Bear.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+beaver.tscn::PackedScene::4286326515075159074::1743684871::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+camera.tscn::PackedScene::9073626849291492281::1743684869::0::1::::<><>::res://Scripts/camera_pivot.gd
 control_interface.tscn::PackedScene::92257848943810547::1743667120::0::1::::<><>::uid://ceywtv86idyid::::res://ui_resources/action_select_plane.png<>res://Scripts/control_interface.gd<>uid://8ayrk5m3phm8::::res://ui_resources/attack_icon.png<>uid://cyptbsds0yuoq::::res://ui_resources/pick up_icon.png<>uid://1qflmih00muo::::res://ui_resources/extracting_icon.png<>uid://dbog7ag706o1f::::res://ui_resources/carrying_icon.png
-health_bar.tscn::PackedScene::3367897684234045522::1743667120::0::1::::<><>::
+health_bar.tres::ViewportTexture::3546464363295168611::1743673773::0::1::::<><>::
+health_bar.tscn::PackedScene::3367897684234045522::1743684870::0::1::::<><>::uid://bqr60q52e8os6::::res://health_bar.tres
+highlight.gdshader::Shader::-1::1743684875::0::1::::<><>::
 icon.svg::CompressedTexture2D::4558128832728953608::1741481017::1743667141::1::::<><>::
-main.tscn::PackedScene::5497894077211875588::1743667120::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://bsyso8a2ii6fi::::res://MeshLibaray.tres<>uid://bkxqdektbsqt::::res://control_interface.tscn<>uid://m47e1rlejowt::::res://mammal_tribe_info.tscn
-mammal_tribe_info.tscn::PackedScene::904084557842553055::1743667097::0::1::::<><>::uid://bjimakxcbq4a2::::res://ui_resources/mammal_resources.png<>uid://cejt8oqrnr6l4::::res://ui_resources/mammal_tribe_profile.png
-MeshLibaray.tres::MeshLibrary::3700484576767935822::1743667120::0::1::::<><>::
-MeshLibrary.tscn::PackedScene::6484400365817874666::1743667120::0::1::::<><>::uid://bala4qxyagjoo::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj<>uid://bw2qcrj7bq12y::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj<>uid://deyfcj85lxdsw::::res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj<>uid://cf8to0vsmhv7j::::res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj<>uid://kokrs7vrmjps::::res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj<>uid://duwr2tyxrqavw::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj<>uid://dffy3n30cni6d::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj<>uid://ctx70ou5e87b3::::res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj<>uid://8eohidnol5ph::::res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj
+main.tscn::PackedScene::5497894077211875588::1743684871::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://bsyso8a2ii6fi::::res://MeshLibaray.tres<>uid://bkxqdektbsqt::::res://control_interface.tscn<>uid://m47e1rlejowt::::res://mammal_tribe_info.tscn
+mammal_tribe_info.tscn::PackedScene::904084557842553055::1743684870::0::1::::<><>::uid://bjimakxcbq4a2::::res://ui_resources/mammal_resources.png<>uid://cejt8oqrnr6l4::::res://ui_resources/mammal_tribe_profile.png
+MeshLibaray.tres::MeshLibrary::3700484576767935822::1743667210::0::1::::<><>::
+MeshLibrary.tscn::PackedScene::6484400365817874666::1743684871::0::1::::<><>::uid://bala4qxyagjoo::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj<>uid://bw2qcrj7bq12y::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj<>uid://deyfcj85lxdsw::::res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj<>uid://cf8to0vsmhv7j::::res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj<>uid://kokrs7vrmjps::::res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj<>uid://duwr2tyxrqavw::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj<>uid://dffy3n30cni6d::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj<>uid://ctx70ou5e87b3::::res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj<>uid://8eohidnol5ph::::res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj
 models.tscn::PackedScene::8079672866901922699::1743455597::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
 README.md::TextFile::-1::1743450501::0::1::::<><>::
-squirrel.tscn::PackedScene::6657351806810570297::1743450503::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+squirrel.tscn::PackedScene::6657351806810570297::1743684871::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+tent.tscn::PackedScene::541224366422738112::1743684872::0::1::::<><>::res://Scripts/static_unit.gd
 Tilemap.tscn::PackedScene::913834564890853241::1743450503::0::1::::<><>::
 TileSet.tres::MeshLibrary::2131486620684384407::1743667120::0::1::::<><>::
-Wolf.tres::ArrayMesh::58362639912161336::1743667097::0::1::::<><>::
-wolf.tscn::PackedScene::4549391083927992049::1743667097::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://3jhvedajvfs::::res://Wolf.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-::res://animal pack/::1743450527
+Wolf.tres::ArrayMesh::58362639912161336::1743667210::0::1::::<><>::
+wolf.tscn::PackedScene::4549391083927992049::1743684870::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://3jhvedajvfs::::res://Wolf.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+::res://animal pack/::1743667144
 fbx.fbx::PackedScene::4326998034577205847::1741777313::1743667144::1::::<><>::
 obj.obj::Mesh::7646209538035120016::1741777313::1743667143::1::::<><>::
-::res://Assets/::1743667120
+::res://Assets/::1743667144
 BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741869485::1743667143::1::::<><>::
 frog.FBX::PackedScene::8653520198240445413::1741869485::1743667141::0::::<><>::
 wolf.glb::PackedScene::2200664615854804102::1743667120::1743667143::1::::<><>::
 ::res://Assets/animal pack/::1741869485
-::res://Assets/kenney_nature-kit/::1743667120
+::res://Assets/kenney_nature-kit/::1743667141
 License.txt::TextFile::-1::1743667119::0::1::::<><>::
 Preview.png::CompressedTexture2D::2260120196515969458::1743667120::1743667141::1::::<><>::
 Sample.png::CompressedTexture2D::1801691039471469974::1743667120::1743667141::1::::<><>::
 ::res://Assets/kenney_nature-kit/Models/::1743667119
-::res://Assets/kenney_nature-kit/Models/OBJ format/::1743667120
+::res://Assets/kenney_nature-kit/Models/OBJ format/::1743667143
 cliff_block_rock.obj::Mesh::2409181504005801342::1743667119::1743667143::1::::<><>::
 cliff_block_stone.obj::Mesh::3987289394817622630::1743667119::1743667142::1::::<><>::
 flower_purpleA.obj::Mesh::7489870173347876974::1743667120::1743667142::1::::<><>::
@@ -43,15 +46,15 @@ stone_largeF.obj::Mesh::8609536675829048784::1743667120::1743667141::1::::<><>::
 stone_tallB.obj::Mesh::7522036095292651241::1743667120::1743667141::1::::<><>::
 tent_detailedOpen.obj::Mesh::6155898441061073990::1743667120::1743667141::1::::<><>::
 tree_cone_fall.obj::Mesh::2325352314958423701::1743667120::1743667141::1::::<><>::
-::res://Scripts/::1743667120
+::res://Scripts/::1743684866
 camera_pivot.gd::GDScript::-1::1741481017::0::1::::<>Marker3D<>::
 control_interface.gd::GDScript::-1::1743667120::0::1::::<>Control<>::
-dynamic_unit.gd::GDScript::-1::1743667120::0::1::::Dynamic_Unit<>Unit<>::
-main.gd::GDScript::-1::1743667120::0::1::::<>Node3D<>::
-static_unit.gd::GDScript::-1::1741778379::0::1::::Static_Unit<>Unit<>::
+dynamic_unit.gd::GDScript::-1::1743674718::0::1::::Dynamic_Unit<>Unit<>::
+main.gd::GDScript::-1::1743684866::0::1::::<>Node3D<>::
+static_unit.gd::GDScript::-1::1743684219::0::1::::Static_Unit<>Unit<>::
 tribe.gd::GDScript::-1::1741778725::0::1::::Tribe<>Node<>::
-unit.gd::GDScript::-1::1743667120::0::1::::Unit<>CharacterBody3D<>::
-::res://ui_resources/::1743450526
+unit.gd::GDScript::-1::1743674868::0::1::::Unit<>CharacterBody3D<>::
+::res://ui_resources/::1743667141
 action_select_plane.png::CompressedTexture2D::5104512667349055019::1742127169::1743667141::1::::<><>::
 attack_icon.png::CompressedTexture2D::2317719978538721549::1742127169::1743667141::1::::<><>::
 bear_icon.png::CompressedTexture2D::8133502983363929642::1742127169::1743667141::1::::<><>::

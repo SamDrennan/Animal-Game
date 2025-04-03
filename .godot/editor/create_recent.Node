@@ -1,4 +1,7 @@
 MeshInstance3D
+CharacterBody3D
+CollisionShape3D
+StaticBody3D
 ProgressBar
 TextureProgressBar
 Label
@@ -8,6 +11,4 @@ Panel
 Node3D
 SubViewport
 Sprite3D
-StaticBody3D
-CollisionShape3D
 RigidBody3D

@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://hyf5eq25y6u3"]
+
+[ext_resource type="Script" path="res://Scripts/static_unit.gd" id="1_kytjr"]
+[ext_resource type="PackedScene" uid="uid://bn8o1u6ki8j2q" path="res://health_bar.tscn" id="2_tcmbv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d3q3v"]
+size = Vector3(0.7, 0.7, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3wev"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e1bqt"]
+material = SubResource("StandardMaterial3D_p3wev")
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.001
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_o765y"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Tent" type="CharacterBody3D"]
+script = ExtResource("1_kytjr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+shape = SubResource("BoxShape3D_d3q3v")
+
+[node name="Highlight" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CylinderMesh_e1bqt")
+
+[node name="Sprite3D" parent="." instance=ExtResource("2_tcmbv")]
+texture = SubResource("ViewportTexture_o765y")
