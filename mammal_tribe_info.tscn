@@ -32,6 +32,7 @@ offset_left = 330.0
 offset_top = 25.0
 offset_right = 430.0
 offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
 
 [node name="meat_num" type="Label" parent="."]
 layout_mode = 0
@@ -39,6 +40,7 @@ offset_left = 531.0
 offset_top = 25.0
 offset_right = 631.0
 offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
 
 [node name="wood_num" type="Label" parent="."]
 layout_mode = 0
@@ -46,6 +48,7 @@ offset_left = 733.0
 offset_top = 25.0
 offset_right = 833.0
 offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
 
 [node name="stone_num" type="Label" parent="."]
 layout_mode = 0
@@ -53,6 +56,7 @@ offset_left = 925.0
 offset_top = 25.0
 offset_right = 1025.0
 offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30
 
 [node name="mud_num" type="Label" parent="."]
 layout_mode = 0
@@ -60,3 +64,4 @@ offset_left = 1129.0
 offset_top = 25.0
 offset_right = 1229.0
 offset_bottom = 75.0
+theme_override_font_sizes/font_size = 30

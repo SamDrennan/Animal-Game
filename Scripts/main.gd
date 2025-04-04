@@ -185,6 +185,7 @@ func _ready() -> void:
 	var tribe_info=Tribe.new()
 	$"Tribe info".setup(tribe_info)
 	
+	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
 	a_beaver.position = Vector3(2.5,1,4.5)
 	a_beaver.unitID = 1
