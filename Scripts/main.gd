@@ -181,11 +181,17 @@ func _ready() -> void:
 		pathing.set_point_solid(Vector2i(stone_position2.x, stone_position2.z))
 	
 	
+	#tribe infor mation set up
+	var tribe_info=Tribe.new()
+	$"Tribe info".setup(tribe_info)
+	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
 	a_beaver.position = Vector3(2.5,1,4.5)
 	a_beaver.unitID = 1
 	a_beaver.set_team(2)
 	add_child(a_beaver)
+	tribe_info.units.append(a_beaver)
+	#print(tribe_info.units)
 	
 	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
 	a_squirrel.position = Vector3(4.5,1,4.5)
