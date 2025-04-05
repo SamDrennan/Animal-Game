@@ -28,6 +28,7 @@ var stone=[]
 var mud= []
 
 var player_tribe
+var player_tent_position
 # split wood instances into forests which will be groups of trees
 
 
@@ -48,22 +49,24 @@ func _ready() -> void:
 	var r
 	
 	#tent
-	var tentposition1=Vector3i(map_size*2/10,1,map_size*2/10)
-	grid_map.set_cell_item(tentposition1, 9)
-	pathing.set_point_solid(Vector2i(tentposition1.x, tentposition1.z))
+	player_tent_position=Vector3i(map_size*2/10,1,map_size*2/10)
+	grid_map.set_cell_item(player_tent_position, 9)
+	pathing.set_point_solid(Vector2i(player_tent_position.x, player_tent_position.z))
+	
+	player_tent_position = Vector3(player_tent_position.x + 0.5,player_tent_position.y,player_tent_position.z + 0.5)
 	
 	var a_tent : Static_Unit = tent.instantiate()
-	a_tent.set_static_position(Vector3(tentposition1.x + 0.5,tentposition1.y,tentposition1.z + 0.5))
+	a_tent.set_static_position(Vector3(player_tent_position.x,player_tent_position.y,player_tent_position.z))
 	a_tent.unitID = 1
 	a_tent.set_team(1)
 	add_child(a_tent)
 	
-	var tentposition2=Vector3i(map_size*8/10,1,map_size*3/10)
-	grid_map.set_cell_item(tentposition2, 9)
-	pathing.set_point_solid(Vector2i(tentposition2.x, tentposition2.z))
+	var enemy_tent_position=Vector3i(map_size*8/10,1,map_size*3/10)
+	grid_map.set_cell_item(enemy_tent_position, 9)
+	pathing.set_point_solid(Vector2i(enemy_tent_position.x, enemy_tent_position.z))
 	
 	var a_tent_2 : Static_Unit = tent.instantiate()
-	a_tent_2.set_static_position(Vector3(tentposition2.x + 0.5,tentposition2.y,tentposition2.z + 0.5))
+	a_tent_2.set_static_position(Vector3(enemy_tent_position.x + 0.5,enemy_tent_position.y,enemy_tent_position.z + 0.5))
 	a_tent_2.unitID = 1
 	a_tent_2.set_team(2)
 	add_child(a_tent_2)
@@ -243,7 +246,28 @@ func select_node(event):
 			if (temp_selection != null):
 				if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
 					var is_unit = false
-					
+					var clicked_resource = false
+					temp_selection.harvesting = 0
+					match grid_map.get_cell_item(result["position"]):
+						2:
+							temp_selection.harvesting = 5
+							clicked_resource = true
+						5:
+							temp_selection.harvesting = 3
+							clicked_resource = true
+						6:
+							temp_selection.harvesting = 4
+							clicked_resource = true
+						7:
+							temp_selection.harvesting = 1
+							clicked_resource = true
+						10:
+							temp_selection.harvesting = 2
+							clicked_resource = true
+					if (clicked_resource):
+						temp_selection.harvest_location = result["position"]
+						
+						
 					if (unit_script != null):
 						if (unit_script.get_base_script().get_global_name() == "Unit"):
 							temp_selection.attacking = result["collider"]

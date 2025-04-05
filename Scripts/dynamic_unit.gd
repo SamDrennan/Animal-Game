@@ -7,9 +7,15 @@ var destination: Vector3
 var attacking: Unit
 var speed: int = 3
 var damage: int = 10
-var isBled: bool
 var cooldown: float = 0
 var move_delay: float = 0
+
+# resource gathering variables
+var harvesting: int = 0 # 0 nothing, 1 herb, 2 wood, 3 meat, 4 mud, 5 stone
+var harvest_location: Vector3
+var carrying: Array # index 0 is resource type, 1 is amount
+var returning: bool = false
+var collect_cooldown: float = 0
 
 var path
 
@@ -36,6 +42,7 @@ func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
 	
 	move(delta)
+	harvest(delta)
 	attack(delta)
 	
 	super._process(delta)
@@ -55,7 +62,35 @@ func attack(delta: float) -> void:
 			attacking.health -= self.damage
 			cooldown = 1
 			
+func harvest(delta: float) -> void:
 	
+	if (collect_cooldown > 0):
+		collect_cooldown -= delta
+	
+	# 0 nothing, 1 herb, 2 wood, 3 meat, 4 mud, 5 stone
+	if (unitID == 1 and harvesting != 0 and team == 1):
+		var p_tent_pos = get_parent().player_tent_position
+		
+		if ((harvest_location - position).length() < 2 and not returning):
+			if (collect_cooldown <= 0):
+				carrying = []
+				carrying.resize(5)
+				carrying.fill(0)
+				carrying[harvesting - 1] = 10
+				collect_cooldown = 2
+				set_path(get_parent().get_unit_path(position, p_tent_pos, true))
+				returning = true
+			
+		elif ((p_tent_pos - position).length() < 2 and returning):
+			get_parent().player_tribe.add_resources(carrying)
+			carrying = []
+			set_path(get_parent().get_unit_path(position, harvest_location, true))
+			returning = false
+			
+		elif (path.size() == 0 and not returning):
+			set_path(get_parent().get_unit_path(position, harvest_location, true))
+		elif (path.size() == 0 and returning):
+			set_path(get_parent().get_unit_path(position, p_tent_pos, true))
 	
 func move(delta: float) -> void:	
 	
@@ -84,7 +119,6 @@ func move(delta: float) -> void:
 func set_path(p):
 	p.pop_front()
 	path = p
-	print(path)
 
 func set_unitID(input: int) -> void:
 	unitID = input
