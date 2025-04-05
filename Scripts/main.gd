@@ -38,32 +38,14 @@ func _ready() -> void:
 	for i in range(map_size):
 		for j in range(map_size/2 + 1):
 			grid_map.set_cell_item(Vector3i(i,0,j), 0)
-	
-	print("here")
-	
-	#var area = $area/Coll
-	#temp_area = $area
-	#area.shape.size.x = map_size
-	#area.shape.size.z = map_size/2
-	#area.position.x = map_size/2
-	#area.position.z = map_size/2
 
 	pathing = AStarGrid2D.new()
-	pathing.size = Vector2i(map_size,map_size)
+	pathing.size = Vector2i(map_size,map_size/2 + 1)
 	pathing.cell_size = Vector2i(1,1)
 	pathing.diagonal_mode = 2
 	pathing.update()
 	
-	selection1 = $s1
-	selection2 = $s2
-	
 	var r
-	
-	#r =  Vector3i(randi_range(0,map_size - 1),1,randi_range(0,map_size/2 - 1))
-	#tree.append( r )
-	#grid_map.set_cell_item(r, 10)
-	#pathing.set_point_solid(Vector2i(r.x, r.z))
-	##print(tree)
 	
 	#tent
 	var tentposition1=Vector3i(map_size*2/10,1,map_size*2/10)
@@ -242,12 +224,6 @@ func select_node(event):
 	print(result)
 	
 	if result.size() > 0:
-		#selection2.position = selection1.position
-		#var new_pos = result["position"]
-		#selection1.position = Vector3( ceil(new_pos.x + .5) - .5, 1, ceil(new_pos.z + .5) - .5)
-
-
-		#var unit_script : Script = result["collider"].get_parent().get_script().get_base_script()
 		var unit_script = result["collider"].get_script()
 		
 		if (event.button_index == 1):
@@ -262,43 +238,24 @@ func select_node(event):
 				if (temp_selection != null):
 					temp_selection.selected = false
 				temp_selection = null
-			
-			
-		#if (event.button_index == 1):
-			#if (unit_script != null):
-				#if (unit_script.get_global_name() == "Unit"):
-					#temp_selection = result["collider"].get_parent()
-			#else:
-				#temp_selection = null
 		
 		if (event.button_index == 2):
 			if (temp_selection != null):
 				if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
-					var dest_x = result["position"].x
-					var dest_z = result["position"].z
+					var is_unit = false
+					
 					if (unit_script != null):
 						if (unit_script.get_base_script().get_global_name() == "Unit"):
-							
 							temp_selection.attacking = result["collider"]
 							
-							var x_comp = result["collider"].position.x - temp_selection.position.x
-							var z_comp = result["collider"].position.z - temp_selection.position.z
-							
-							if (x_comp > 0.5):
-								dest_x = result["collider"].position.x - 1
-							elif (x_comp < -0.5):
-								dest_x = result["collider"].position.x + 1
-							if (z_comp > 0.5):
-								dest_z = result["collider"].position.z - 1
-							elif (z_comp < -0.5):
-								dest_z = result["collider"].position.z + 1
+							is_unit = true
 					else:
 						temp_selection.attacking = null
-				
-					print(pathing.get_id_path(Vector2i(temp_selection.position.x, temp_selection.position.z), Vector2i(result["position"].x, result["position"].z)))
-					print(pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(dest_x, dest_z)))
-					temp_selection.set_path( pathing.get_id_path(Vector2(temp_selection.position.x - .5, temp_selection.position.z - .5), Vector2(dest_x, dest_z)) )
-					#temp_selection.destination = Vector3(result["position"].x, 1, result["position"].z)
+						
+					if (is_unit):
+						temp_selection.set_path( get_unit_path(temp_selection.position, result["collider"].position, is_unit) )
+					else:
+						temp_selection.set_path( get_unit_path(temp_selection.position, result["position"], is_unit) )
 
 	else:
 		if (event.button_index == 1):
@@ -306,6 +263,22 @@ func select_node(event):
 				temp_selection.selected = false
 			temp_selection = null
 
-func attack_action():
-	if (temp_selection.get_script().get_global_name() == "Dynamic_Unit"):
-		temp_selection.attack()
+func get_unit_path(start_pos: Vector3, end_pos: Vector3, is_unit: bool) -> Array:
+	var dest_x = end_pos.x
+	var dest_z = end_pos.z
+	
+	if (is_unit):
+		var x_comp = end_pos.x - start_pos.x
+		var z_comp = end_pos.z - start_pos.z
+		
+		if (x_comp > 0.5):
+			dest_x = end_pos.x - 1
+		elif (x_comp < -0.5):
+			dest_x = end_pos.x + 1
+		if (z_comp > 0.5):
+			dest_z = end_pos.z - 1
+		elif (z_comp < -0.5):
+			dest_z = end_pos.z + 1
+
+	return pathing.get_id_path(Vector2(start_pos.x - .5, start_pos.z - .5), Vector2(dest_x, dest_z))
+	

@@ -9,6 +9,7 @@ var speed: int = 3
 var damage: int = 10
 var isBled: bool
 var cooldown: float = 0
+var move_delay: float = 0
 
 var path
 
@@ -40,10 +41,6 @@ func _process(delta: float) -> void:
 	super._process(delta)
 	
 func _physics_process(delta: float) -> void:
-	
-	#if (self.position.y >= 1 + (5 * delta)): # If in the air, fall towards the floor. Literally gravity
-	#	self.position.y = self.position.y - (5 * delta)
-	#	self.destination.y = self.position.y
 	pass
 			
 func attack(delta: float) -> void:
@@ -60,26 +57,16 @@ func attack(delta: float) -> void:
 			
 	
 	
-func move(delta: float) -> void:
-	#var direction = self.position.direction_to(destination).normalized()
-	#var dist = position.distance_to(destination)
-	#
-	#if (destination != self.position):
-		
-		#velocity.x = direction.x * delta * speed
-		#velocity.z = direction.z * delta * speed
-		#
-		#if (self.position.distance_to(destination) < velocity.distance_to(destination)):
-			#self.position = destination
-			#velocity = Vector3()
-			#
-		#else:
-			#self.basis = Basis.looking_at(direction)
-			#
-	#elif path.size() > 0:
-		#destination = Vector3(path[0].x + .5, 1, path[0].y  + .5)
-		#path.pop_front() 
-		
+func move(delta: float) -> void:	
+	
+	if (move_delay > 0):
+		move_delay -= delta
+	
+	if (attacking != null):
+		if (move_delay <= 0):
+			set_path(get_parent().get_unit_path(position, attacking.position, true))
+			move_delay = 0.1
+	
 	if (destination != self.position):
 		var direction = self.position.direction_to(destination)
 		var translation = direction*speed*delta
@@ -97,7 +84,7 @@ func move(delta: float) -> void:
 func set_path(p):
 	p.pop_front()
 	path = p
-	pass
+	print(path)
 
 func set_unitID(input: int) -> void:
 	unitID = input
