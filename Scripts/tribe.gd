@@ -46,3 +46,15 @@ func add_stone(amount: int):
 	
 	stone += amount
 	emit_signal("resource_updated", "stone", stone)
+	
+func add_resources(amount: Array):
+	# order is [herb, wood, meat, mud, stone]
+	add_herb(amount[0])
+	add_wood(amount[1])
+	add_meat(amount[2])
+	add_mud(amount[3])
+	add_stone(amount[4])
+	
+func get_resources() -> Array:
+	# order is [herb, wood, meat, mud, stone]
+	return [herb,wood,meat,mud,stone]

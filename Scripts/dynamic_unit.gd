@@ -28,7 +28,6 @@ func _ready() -> void:
 			label.text = "Squirrel"
 		3:
 			label.text = "Wolf"
-			self.damage = 50
 		4:
 			label.text = "Bear"
 	
@@ -100,12 +99,14 @@ func set_path(p):
 	path = p
 	pass
 
-func attack_animation() -> void:
-	pass
-	
-func die_animation() -> void:
-	pass
-	
-func move_animation() -> void:
-	pass
-	
+func set_unitID(input: int) -> void:
+	unitID = input
+	match unitID:
+		1:
+			self.cost = [10, 0, 0, 0, 0]
+		2:
+			self.cost = [5, 10, 0, 0, 0]
+		3:
+			self.cost = [0, 10, 10, 0, 0]
+		4:
+			self.cost = [0, 10, 20, 0, 0]

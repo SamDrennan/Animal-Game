@@ -3,7 +3,7 @@ extends CharacterBody3D
 class_name Unit
 
 var health: int
-var cost: Array[int]
+var cost: Array[int] # order is [herb, wood, meat, mud, stone]
 var sightRange: int
 var selected: bool = false
 var team: int 
@@ -12,6 +12,7 @@ func _init(health_v,sightRange_v):
 	health = health_v
 	sightRange=sightRange_v
 	
+
 func set_team(team_v: int):
 	team = team_v
 	var style = StyleBoxFlat.new()

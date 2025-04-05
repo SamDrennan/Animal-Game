@@ -41,26 +41,57 @@ func spawn1() -> void:
 	if (unitID == 1):
 		var a_beaver : Dynamic_Unit = beaver.instantiate()
 		a_beaver.position = spawn_position
-		a_beaver.unitID = 1
+		a_beaver.set_unitID(1)
 		a_beaver.set_team(team)
-		get_parent().add_child(a_beaver)
+		if (check_resources(a_beaver)):
+			reduce_resources(a_beaver)
+			get_parent().add_child(a_beaver)
+		else:
+			a_beaver.free()
 	elif (unitID == 2):
 		var a_wolf : Dynamic_Unit = wolf.instantiate()
 		a_wolf.position = spawn_position
-		a_wolf.unitID = 3
+		a_wolf.set_unitID(3)
 		a_wolf.set_team(team)
-		get_parent().add_child(a_wolf)
+		if (check_resources(a_wolf)):
+			reduce_resources(a_wolf)
+			get_parent().add_child(a_wolf)
+		else:
+			a_wolf.free()
 	
 func spawn2() -> void:
 	if (unitID == 1):
 		var a_squirrel : Dynamic_Unit = squirrel.instantiate()
 		a_squirrel.position = spawn_position
-		a_squirrel.unitID = 2
+		a_squirrel.set_unitID(2)
 		a_squirrel.set_team(team)
-		get_parent().add_child(a_squirrel)
+		if (check_resources(a_squirrel)):
+			reduce_resources(a_squirrel)
+			get_parent().add_child(a_squirrel)
+		else:
+			a_squirrel.free()
 	elif (unitID == 2):
 		var a_bear : Dynamic_Unit = bear.instantiate()
 		a_bear.position = spawn_position
-		a_bear.unitID = 4
+		a_bear.set_unitID(4)
 		a_bear.set_team(team)
-		get_parent().add_child(a_bear)
+		if (check_resources(a_bear)):
+			reduce_resources(a_bear)
+			get_parent().add_child(a_bear)
+		else:
+			a_bear.free()
+		
+func check_resources(unit: Dynamic_Unit) -> bool:
+	if (team == 1):
+		# order is [herb, wood, meat, mud, stone]
+		var resources = get_parent().player_tribe.get_resources()
+		return resources >= unit.cost
+	else:
+		return true
+	
+func reduce_resources(unit: Dynamic_Unit) -> void:
+	if (team == 1):
+		# order is [herb, wood, meat, mud, stone]
+		get_parent().player_tribe.add_resources([-unit.cost[0],-unit.cost[1],-unit.cost[2],-unit.cost[3],-unit.cost[4]])
+	else:
+		pass

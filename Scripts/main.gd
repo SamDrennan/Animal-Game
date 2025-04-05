@@ -26,6 +26,8 @@ var depot = []
 var herb = []
 var stone=[]
 var mud= []
+
+var player_tribe
 # split wood instances into forests which will be groups of trees
 
 
@@ -182,16 +184,17 @@ func _ready() -> void:
 	
 	
 	#tribe infor mation set up
-	var tribe_info=Tribe.new()
-	$"Tribe info".setup(tribe_info)
+	player_tribe=Tribe.new()
+	$"Tribe info".setup(player_tribe)
+	player_tribe.add_resources([30,30,30,30,30])
 	
 	
 	var a_beaver : Dynamic_Unit = beaver.instantiate()
 	a_beaver.position = Vector3(2.5,1,4.5)
 	a_beaver.unitID = 1
-	a_beaver.set_team(2)
+	a_beaver.set_team(1)
 	add_child(a_beaver)
-	tribe_info.units.append(a_beaver)
+	player_tribe.units.append(a_beaver)
 	#print(tribe_info.units)
 	
 	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
