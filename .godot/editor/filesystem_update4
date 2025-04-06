@@ -3,6 +3,7 @@ res://Bear.tres
 res://health_bar.tres
 res://Wolf.tres
 res://MeshLibaray.tres
+res://Scripts/dynamic_unit.gd
 res://camera.tscn
 res://bear.tscn
 res://health_bar.tscn

@@ -19,6 +19,8 @@ var collect_cooldown: float = 0
 
 var path
 
+#@onready var animation=$AnimationPlayer
+
 func _init():
 	# set super value
 	super._init(100,0)
@@ -61,6 +63,10 @@ func attack(delta: float) -> void:
 		elif (cooldown <= 0 and (attacking.position - self.position).length() < 1.5):
 			attacking.health -= self.damage
 			cooldown = 1
+			#animation.play("attacking")
+			if attacking.health <=0:
+				attacking = null
+				#animation.pause()
 			
 func harvest(delta: float) -> void:
 	
@@ -106,6 +112,7 @@ func move(delta: float) -> void:
 		var direction = self.position.direction_to(destination)
 		var translation = direction*speed*delta
 		
+		#animation.play("running")
 		if (self.position.distance_to(destination) < translation.length()):
 			self.position = destination
 			
