@@ -1,7 +1,7 @@
 res://camera.tscn
+res://Bear.tres
 res://health_bar.tres
 res://Wolf.tres
-res://Bear.tres
 res://MeshLibaray.tres
 res://bear.tscn
 res://wolf.tscn
@@ -9,7 +9,3 @@ res://health_bar.tscn
 res://mammal_tribe_info.tscn
 res://main.tscn
 res://MeshLibrary.tscn
-res://Scripts/static_unit.gd
-res://Scripts/main.gd
-res://Scripts/dynamic_unit.gd
-res://Scripts/unit.gd
