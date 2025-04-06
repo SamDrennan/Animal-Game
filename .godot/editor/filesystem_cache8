@@ -1,68 +1,68 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1743914634
-Bear.tres::ArrayMesh::19377954395789128::1743914486::0::1::::<><>::
-bear.tscn::PackedScene::1600873092948133524::1743914520::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://jnff2i71vkq::::res://Bear.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-beaver.tscn::PackedScene::4286326515075159074::1743696071::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-camera.tscn::PackedScene::9073626849291492281::1743914520::0::1::::<><>::res://Scripts/camera_pivot.gd
-control_interface.tscn::PackedScene::92257848943810547::1743559471::0::1::::<><>::uid://ceywtv86idyid::::res://ui_resources/action_select_plane.png<>res://Scripts/control_interface.gd<>uid://8ayrk5m3phm8::::res://ui_resources/attack_icon.png<>uid://cyptbsds0yuoq::::res://ui_resources/pick up_icon.png<>uid://1qflmih00muo::::res://ui_resources/extracting_icon.png<>uid://dbog7ag706o1f::::res://ui_resources/carrying_icon.png
-health_bar.tres::ViewportTexture::3546464363295168611::1743914486::0::1::::<><>::
-health_bar.tscn::PackedScene::3367897684234045522::1743914520::0::1::::<><>::uid://bqr60q52e8os6::::res://health_bar.tres
-highlight.gdshader::Shader::-1::1743696071::0::1::::<><>::
-icon.svg::CompressedTexture2D::4558128832728953608::1741962463::1743901678::1::::<><>::
-main.tscn::PackedScene::5497894077211875588::1743914520::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://bsyso8a2ii6fi::::res://MeshLibaray.tres<>uid://bkxqdektbsqt::::res://control_interface.tscn<>uid://m47e1rlejowt::::res://mammal_tribe_info.tscn
-mammal_tribe_info.tscn::PackedScene::904084557842553055::1743914520::0::1::::<><>::res://tribe_info.gd<>uid://bjimakxcbq4a2::::res://ui_resources/mammal_resources.png<>uid://cejt8oqrnr6l4::::res://ui_resources/mammal_tribe_profile.png
-MeshLibaray.tres::MeshLibrary::3700484576767935822::1743914617::0::1::::<><>::
-MeshLibrary.tscn::PackedScene::6484400365817874666::1743914520::0::1::::<><>::uid://bala4qxyagjoo::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj<>uid://bw2qcrj7bq12y::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj<>uid://deyfcj85lxdsw::::res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj<>uid://cf8to0vsmhv7j::::res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj<>uid://kokrs7vrmjps::::res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj<>uid://duwr2tyxrqavw::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj<>uid://dffy3n30cni6d::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj<>uid://ctx70ou5e87b3::::res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj<>uid://8eohidnol5ph::::res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj
-models.tscn::PackedScene::8079672866901922699::1743525532::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
-README.md::TextFile::-1::1741962463::0::1::::<><>::
-squirrel.tscn::PackedScene::6657351806810570297::1743696071::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-tent.tscn::PackedScene::541224366422738112::1743696071::0::1::::<><>::res://Scripts/static_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-Tilemap.tscn::PackedScene::913834564890853241::1743464495::0::1::::<><>::
-TileSet.tres::MeshLibrary::2131486620684384407::1743628762::0::1::::<><>::
-tribe_info.gd::GDScript::-1::1743745957::0::1::::Tribe_info<>Panel<>::
-wolf.glb::PackedScene::676682321943408278::1743901734::1743901735::1::::<><>::
-Wolf.tres::ArrayMesh::58362639912161336::1743914486::0::1::::<><>::
-wolf.tscn::PackedScene::4549391083927992049::1743914617::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://3jhvedajvfs::::res://Wolf.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
-::res://animal pack/::1743901680
-fbx.fbx::PackedScene::4326998034577205847::1741962463::1743901680::1::::<><>::
-obj.obj::Mesh::7646209538035120016::1741962463::1743901679::1::::<><>::
-::res://Assets/::1743914617
-BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741962463::1743901679::1::::<><>::
-frog.FBX::PackedScene::8653520198240445413::1741962463::1743901678::0::::<><>::
-wolf.glb::PackedScene::2200664615854804102::1743901655::1743914635::1::::<><>::
-::res://Assets/animal pack/::1741962463
-::res://Assets/kenney_nature-kit/::1743901678
-License.txt::TextFile::-1::1588114976::0::1::::<><>::
-Preview.png::CompressedTexture2D::2260120196515969458::1588115102::1743901678::1::::<><>::
-Sample.png::CompressedTexture2D::1801691039471469974::1588115104::1743901678::1::::<><>::
-::res://Assets/kenney_nature-kit/Models/::1743559785
-::res://Assets/kenney_nature-kit/Models/OBJ format/::1743901679
-cliff_block_rock.obj::Mesh::2409181504005801342::1588115052::1743901679::1::::<><>::
-cliff_block_stone.obj::Mesh::3987289394817622630::1588115052::1743901679::1::::<><>::
-flower_purpleA.obj::Mesh::7489870173347876974::1588115061::1743901679::1::::<><>::
-ground_riverBend.obj::Mesh::3353648885431963806::1588115064::1743901679::1::::<><>::
-ground_riverRocks.obj::Mesh::7423491734349237099::1588115064::1743901679::1::::<><>::
-log_stack.obj::Mesh::5193090021796388501::1588115066::1743901679::1::::<><>::
-rock_tallF.obj::Mesh::731428249192596676::1588115071::1743901678::1::::<><>::
-stone_largeF.obj::Mesh::8609536675829048784::1588115072::1743901678::1::::<><>::
-stone_tallB.obj::Mesh::7522036095292651241::1588115074::1743901678::1::::<><>::
-tent_detailedOpen.obj::Mesh::6155898441061073990::1588115075::1743901678::1::::<><>::
-tree_cone_fall.obj::Mesh::2325352314958423701::1588115076::1743901678::1::::<><>::
-::res://Scripts/::1743914617
-camera_pivot.gd::GDScript::-1::1741962463::0::1::::<>Marker3D<>::
-control_interface.gd::GDScript::-1::1743368899::0::1::::<>Control<>::
-dynamic_unit.gd::GDScript::-1::1743914617::0::1::::Dynamic_Unit<>Unit<>::
-main.gd::GDScript::-1::1743893678::0::1::::<>Node3D<>::
-static_unit.gd::GDScript::-1::1743893678::0::1::::Static_Unit<>Unit<>::
-tribe.gd::GDScript::-1::1743893678::0::1::::Tribe<>Node<>::
-unit.gd::GDScript::-1::1743893678::0::1::::Unit<>CharacterBody3D<>::
-::res://ui_resources/::1743901678
-action_select_plane.png::CompressedTexture2D::5104512667349055019::1742102278::1743901678::1::::<><>::
-attack_icon.png::CompressedTexture2D::2317719978538721549::1742102124::1743901678::1::::<><>::
-bear_icon.png::CompressedTexture2D::8133502983363929642::1742102206::1743901678::1::::<><>::
-carrying_icon.png::CompressedTexture2D::7258773641393131833::1742102184::1743901678::1::::<><>::
-extracting_icon.png::CompressedTexture2D::1858263850341675166::1742102152::1743901678::1::::<><>::
-mammal_resources.png::CompressedTexture2D::3035364463237940895::1742102037::1743901678::1::::<><>::
-mammal_tribe_profile.png::CompressedTexture2D::5073389456620545671::1742102056::1743901678::1::::<><>::
-pick up_icon.png::CompressedTexture2D::6489495640573272460::1742102139::1743901678::1::::<><>::
-wolf_icon.png::CompressedTexture2D::6932913337983966749::1742102220::1743901678::1::::<><>::
+::res://::1743944007
+Bear.tres::ArrayMesh::19377954395789128::1743856921::0::1::::<><>::
+bear.tscn::PackedScene::1600873092948133524::1743890823::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://jnff2i71vkq::::res://Bear.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+beaver.tscn::PackedScene::4286326515075159074::1743693067::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+camera.tscn::PackedScene::9073626849291492281::1743890823::0::1::::<><>::res://Scripts/camera_pivot.gd
+control_interface.tscn::PackedScene::92257848943810547::1743667120::0::1::::<><>::uid://ceywtv86idyid::::res://ui_resources/action_select_plane.png<>res://Scripts/control_interface.gd<>uid://8ayrk5m3phm8::::res://ui_resources/attack_icon.png<>uid://cyptbsds0yuoq::::res://ui_resources/pick up_icon.png<>uid://1qflmih00muo::::res://ui_resources/extracting_icon.png<>uid://dbog7ag706o1f::::res://ui_resources/carrying_icon.png
+health_bar.tres::ViewportTexture::3546464363295168611::1743856920::0::1::::<><>::
+health_bar.tscn::PackedScene::3367897684234045522::1743890824::0::1::::<><>::uid://bqr60q52e8os6::::res://health_bar.tres
+highlight.gdshader::Shader::-1::1743693102::0::1::::<><>::
+icon.svg::CompressedTexture2D::4558128832728953608::1741481017::1743944011::1::::<><>::
+main.tscn::PackedScene::5497894077211875588::1743890824::0::1::::<><>::res://Scripts/main.gd<>uid://d2jlkqwvtl1qj::::res://camera.tscn<>uid://bsyso8a2ii6fi::::res://MeshLibaray.tres<>uid://bkxqdektbsqt::::res://control_interface.tscn<>uid://m47e1rlejowt::::res://mammal_tribe_info.tscn
+mammal_tribe_info.tscn::PackedScene::904084557842553055::1743890824::0::1::::<><>::res://tribe_info.gd<>uid://bjimakxcbq4a2::::res://ui_resources/mammal_resources.png<>uid://cejt8oqrnr6l4::::res://ui_resources/mammal_tribe_profile.png
+MeshLibaray.tres::MeshLibrary::3700484576767935822::1743943977::0::1::::<><>::
+MeshLibrary.tscn::PackedScene::6484400365817874666::1743890824::0::1::::<><>::uid://bala4qxyagjoo::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj<>uid://bw2qcrj7bq12y::::res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj<>uid://deyfcj85lxdsw::::res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj<>uid://cf8to0vsmhv7j::::res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj<>uid://kokrs7vrmjps::::res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj<>uid://duwr2tyxrqavw::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj<>uid://dffy3n30cni6d::::res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj<>uid://ctx70ou5e87b3::::res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj<>uid://8eohidnol5ph::::res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj
+models.tscn::PackedScene::8079672866901922699::1743455597::0::1::::<><>::uid://b2wba4of7uf88::::res://animal pack/fbx.fbx
+README.md::TextFile::-1::1743450501::0::1::::<><>::
+squirrel.tscn::PackedScene::6657351806810570297::1743693068::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+tent.tscn::PackedScene::541224366422738112::1743693068::0::1::::<><>::res://Scripts/static_unit.gd<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+Tilemap.tscn::PackedScene::913834564890853241::1743450503::0::1::::<><>::
+TileSet.tres::MeshLibrary::2131486620684384407::1743667120::0::1::::<><>::
+tribe_info.gd::GDScript::-1::1743856439::0::1::::Tribe_info<>Panel<>::
+wolf.glb::PackedScene::676682321943408278::1743943977::1743944014::1::::<><>::
+Wolf.tres::ArrayMesh::58362639912161336::1743856921::0::1::::<><>::
+wolf.tscn::PackedScene::4549391083927992049::1743943977::0::1::::<><>::res://Scripts/dynamic_unit.gd<>uid://3jhvedajvfs::::res://Wolf.tres<>uid://bn8o1u6ki8j2q::::res://health_bar.tscn
+::res://animal pack/::1743856539
+fbx.fbx::PackedScene::4326998034577205847::1741777313::1743944015::1::::<><>::
+obj.obj::Mesh::7646209538035120016::1741777313::1743944013::1::::<><>::
+::res://Assets/::1743943977
+BirdRender_fbx.fbx::PackedScene::4159520721433506520::1741869485::1743944014::1::::<><>::
+frog.FBX::PackedScene::8653520198240445413::1741869485::1743944011::0::::<><>::
+wolf.glb::PackedScene::2200664615854804102::1743943977::1743944014::1::::<><>::
+::res://Assets/animal pack/::1741869485
+::res://Assets/kenney_nature-kit/::1743856536
+License.txt::TextFile::-1::1743667119::0::1::::<><>::
+Preview.png::CompressedTexture2D::2260120196515969458::1743667120::1743944011::1::::<><>::
+Sample.png::CompressedTexture2D::1801691039471469974::1743667120::1743944011::1::::<><>::
+::res://Assets/kenney_nature-kit/Models/::1743667119
+::res://Assets/kenney_nature-kit/Models/OBJ format/::1743856537
+cliff_block_rock.obj::Mesh::2409181504005801342::1743667119::1743944013::1::::<><>::
+cliff_block_stone.obj::Mesh::3987289394817622630::1743667119::1743944013::1::::<><>::
+flower_purpleA.obj::Mesh::7489870173347876974::1743667120::1743944013::1::::<><>::
+ground_riverBend.obj::Mesh::3353648885431963806::1743667120::1743944012::1::::<><>::
+ground_riverRocks.obj::Mesh::7423491734349237099::1743667120::1743944012::1::::<><>::
+log_stack.obj::Mesh::5193090021796388501::1743667120::1743944012::1::::<><>::
+rock_tallF.obj::Mesh::731428249192596676::1743667120::1743944012::1::::<><>::
+stone_largeF.obj::Mesh::8609536675829048784::1743667120::1743944012::1::::<><>::
+stone_tallB.obj::Mesh::7522036095292651241::1743667120::1743944012::1::::<><>::
+tent_detailedOpen.obj::Mesh::6155898441061073990::1743667120::1743944012::1::::<><>::
+tree_cone_fall.obj::Mesh::2325352314958423701::1743667120::1743944011::1::::<><>::
+::res://Scripts/::1743943977
+camera_pivot.gd::GDScript::-1::1741481017::0::1::::<>Marker3D<>::
+control_interface.gd::GDScript::-1::1743667120::0::1::::<>Control<>::
+dynamic_unit.gd::GDScript::-1::1743943977::0::1::::Dynamic_Unit<>Unit<>::
+main.gd::GDScript::-1::1743890416::0::1::::<>Node3D<>::
+static_unit.gd::GDScript::-1::1743859424::0::1::::Static_Unit<>Unit<>::
+tribe.gd::GDScript::-1::1743859501::0::1::::Tribe<>Node<>::
+unit.gd::GDScript::-1::1743857204::0::1::::Unit<>CharacterBody3D<>::
+::res://ui_resources/::1743856536
+action_select_plane.png::CompressedTexture2D::5104512667349055019::1742127169::1743944011::1::::<><>::
+attack_icon.png::CompressedTexture2D::2317719978538721549::1742127169::1743944011::1::::<><>::
+bear_icon.png::CompressedTexture2D::8133502983363929642::1742127169::1743944011::1::::<><>::
+carrying_icon.png::CompressedTexture2D::7258773641393131833::1742127169::1743944011::1::::<><>::
+extracting_icon.png::CompressedTexture2D::1858263850341675166::1742127169::1743944011::1::::<><>::
+mammal_resources.png::CompressedTexture2D::3035364463237940895::1742127169::1743944011::1::::<><>::
+mammal_tribe_profile.png::CompressedTexture2D::5073389456620545671::1742127169::1743944011::1::::<><>::
+pick up_icon.png::CompressedTexture2D::6489495640573272460::1742127169::1743944011::1::::<><>::
+wolf_icon.png::CompressedTexture2D::6932913337983966749::1742127169::1743944011::1::::<><>::

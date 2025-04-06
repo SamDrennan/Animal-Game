@@ -8,6 +8,7 @@ var bear = preload("res://bear.tscn")
 var tent = preload("res://tent.tscn")
 
 @onready var grid_map : GridMap = $GridMap
+@onready var camera : Marker3D = $CameraPivot
 
 const RAY_LENGTH = 1000.0
 
@@ -24,11 +25,12 @@ var temp_selection
 var tree = []
 var depot = []
 var herb = []
-var stone=[]
-var mud= []
+var stone = []
+var mud = []
 
 var player_tribe
 var player_tent_position
+var enemy_tent_position
 # split wood instances into forests which will be groups of trees
 
 
@@ -54,19 +56,22 @@ func _ready() -> void:
 	pathing.set_point_solid(Vector2i(player_tent_position.x, player_tent_position.z))
 	
 	player_tent_position = Vector3(player_tent_position.x + 0.5,player_tent_position.y,player_tent_position.z + 0.5)
+	camera.position = player_tent_position
 	
 	var a_tent : Static_Unit = tent.instantiate()
-	a_tent.set_static_position(Vector3(player_tent_position.x,player_tent_position.y,player_tent_position.z))
+	a_tent.set_static_position(player_tent_position)
 	a_tent.unitID = 1
 	a_tent.set_team(1)
 	add_child(a_tent)
 	
-	var enemy_tent_position=Vector3i(map_size*8/10,1,map_size*3/10)
+	enemy_tent_position=Vector3i(map_size*8/10,1,map_size*3/10)
 	grid_map.set_cell_item(enemy_tent_position, 9)
 	pathing.set_point_solid(Vector2i(enemy_tent_position.x, enemy_tent_position.z))
 	
+	enemy_tent_position = Vector3(enemy_tent_position.x + 0.5,enemy_tent_position.y,enemy_tent_position.z + 0.5)
+	
 	var a_tent_2 : Static_Unit = tent.instantiate()
-	a_tent_2.set_static_position(Vector3(enemy_tent_position.x + 0.5,enemy_tent_position.y,enemy_tent_position.z + 0.5))
+	a_tent_2.set_static_position(enemy_tent_position)
 	a_tent_2.unitID = 1
 	a_tent_2.set_team(2)
 	add_child(a_tent_2)
@@ -172,33 +177,6 @@ func _ready() -> void:
 	player_tribe=Tribe.new()
 	$"Tribe info".setup(player_tribe)
 	player_tribe.add_resources([30,30,30,30,30])
-	
-	
-	var a_beaver : Dynamic_Unit = beaver.instantiate()
-	a_beaver.position = Vector3(2.5,1,4.5)
-	a_beaver.unitID = 1
-	a_beaver.set_team(1)
-	add_child(a_beaver)
-	player_tribe.units.append(a_beaver)
-	#print(tribe_info.units)
-	
-	var a_squirrel : Dynamic_Unit = squirrel.instantiate()
-	a_squirrel.position = Vector3(4.5,1,4.5)
-	a_squirrel.unitID = 2
-	a_squirrel.set_team(2)
-	add_child(a_squirrel)
-	
-	var a_wolf : Dynamic_Unit = wolf.instantiate()
-	a_wolf.position = Vector3(1.5,1,1.5)
-	a_wolf.unitID = 3
-	a_wolf.set_team(1)
-	add_child(a_wolf)
-	
-	var a_bear : Dynamic_Unit = bear.instantiate()
-	a_bear.position = Vector3(4.5,1,2.5)
-	a_bear.unitID = 4
-	a_bear.set_team(1)
-	add_child(a_bear)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -211,6 +189,14 @@ func _process(delta: float) -> void:
 		if (temp_selection != null):
 			if (temp_selection.get_script().get_global_name() == "Static_Unit"):
 				temp_selection.spawn2()
+	if Input.is_action_just_released("ability_3"):
+		if (temp_selection != null):
+			if (temp_selection.get_script().get_global_name() == "Static_Unit"):
+				temp_selection.spawn3()
+	if Input.is_action_just_released("ability_4"):
+		if (temp_selection != null):
+			if (temp_selection.get_script().get_global_name() == "Static_Unit"):
+				temp_selection.spawn4()
 		
 	
 func _input(event):
@@ -233,10 +219,11 @@ func select_node(event):
 			if (unit_script != null):
 				print(result["collider"].get_script().get_global_name())
 				if (unit_script.get_base_script().get_global_name() == "Unit"):
-					if (temp_selection != null):
-						temp_selection.selected = false
-					temp_selection = result["collider"]
-					temp_selection.selected = true
+					if (result["collider"].team == 1):
+						if (temp_selection != null):
+							temp_selection.selected = false
+						temp_selection = result["collider"]
+						temp_selection.selected = true
 			else:
 				if (temp_selection != null):
 					temp_selection.selected = false
@@ -250,7 +237,7 @@ func select_node(event):
 					temp_selection.harvesting = 0
 					match grid_map.get_cell_item(result["position"]):
 						2:
-							temp_selection.harvesting = 5
+							temp_selection.harvesting = 1
 							clicked_resource = true
 						5:
 							temp_selection.harvesting = 3
@@ -259,7 +246,7 @@ func select_node(event):
 							temp_selection.harvesting = 4
 							clicked_resource = true
 						7:
-							temp_selection.harvesting = 1
+							temp_selection.harvesting = 5
 							clicked_resource = true
 						10:
 							temp_selection.harvesting = 2
