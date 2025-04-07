@@ -37,7 +37,7 @@ func _init():
 func _ready() -> void:
 	destination = self.position
 	path = []
-	
+	animation=$AnimationPlayer
 	var label = $Sprite3D/SubViewport/Panel/Label
 	match unitID:
 		1:
@@ -46,10 +46,10 @@ func _ready() -> void:
 			label.text = "Squirrel"
 		3:
 			label.text = "Wolf"
-			animation=$AnimationPlayer
+			
 		4:
 			label.text = "Bear"
-			animation=$AnimationPlayer
+			#animation=$AnimationPlayer
 	
 func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
@@ -93,8 +93,7 @@ func attack(delta: float) -> void:
 		elif (cooldown <= 0 and (attacking.position - self.position).length() < 1.8):
 			attacking.health -= self.damage
 			cooldown = 1
-			if (unitID == 3 or unitID == 4):
-				animation.play("attacking")
+			animation.play("attacking")
 			if attacking.health <=0:
 				attacking = null
 				if (unitID == 3):
@@ -152,7 +151,7 @@ func move(delta: float) -> void:
 		var direction = self.position.direction_to(destination)
 		var translation = direction*speed*delta
 		
-		#animation.play("running")
+		animation.play("running")
 		if (self.position.distance_to(destination) < translation.length()):
 			self.position = destination
 			

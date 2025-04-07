@@ -990,7 +990,8 @@ bones/14/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_akkxx")
 skin = SubResource("Skin_h2mjm")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="beaver2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../beaver2")
 libraries = {
 "": SubResource("AnimationLibrary_bq7dy")
 }
