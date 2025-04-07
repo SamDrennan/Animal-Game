@@ -49,6 +49,7 @@ func _ready() -> void:
 			animation=$AnimationPlayer
 		4:
 			label.text = "Bear"
+			animation=$AnimationPlayer
 	
 func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
@@ -92,7 +93,7 @@ func attack(delta: float) -> void:
 		elif (cooldown <= 0 and (attacking.position - self.position).length() < 1.8):
 			attacking.health -= self.damage
 			cooldown = 1
-			if (unitID == 3):
+			if (unitID == 3 or unitID == 4):
 				animation.play("attacking")
 			if attacking.health <=0:
 				attacking = null

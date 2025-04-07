@@ -9,3 +9,6 @@ res://health_bar.tscn
 res://mammal_tribe_info.tscn
 res://main.tscn
 res://MeshLibrary.tscn
+res://Scripts/dynamic_unit.gd
+res://beaver.tscn
+res://squirrel.tscn
