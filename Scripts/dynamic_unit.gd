@@ -116,6 +116,7 @@ func harvest(delta: float) -> void:
 			tent_pos = get_parent().enemy_tent_position
 		
 		if ((harvest_location - position).length() < 2 and not returning):
+			animation.play("gathering")
 			if (collect_cooldown <= 0):
 				carrying = []
 				carrying.resize(5)

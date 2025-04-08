@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daqo6si3cxorf"
+path="res://.godot/imported/XiMo - Clockwork Carousel.mp3-09cf54fdd9c217533e7b01236ca3ad4e.mp3str"
+
+[deps]
+
+source_file="res://music/XiMo - Clockwork Carousel.mp3"
+dest_files=["res://.godot/imported/XiMo - Clockwork Carousel.mp3-09cf54fdd9c217533e7b01236ca3ad4e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -32,8 +32,8 @@ var player_tribe
 var player_tent_position
 var enemy_tent_position
 # split wood instances into forests which will be groups of trees
-
-
+var a_tent: Static_Unit
+var a_tent_2 : Static_Unit 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	grid_map.clear()
@@ -58,7 +58,7 @@ func _ready() -> void:
 	player_tent_position = Vector3(player_tent_position.x + 0.5,player_tent_position.y,player_tent_position.z + 0.5)
 	camera.position = player_tent_position
 	
-	var a_tent : Static_Unit = tent.instantiate()
+	a_tent  = tent.instantiate()
 	a_tent.set_static_position(player_tent_position)
 	a_tent.unitID = 1
 	a_tent.set_team(1)
@@ -70,7 +70,7 @@ func _ready() -> void:
 	
 	enemy_tent_position = Vector3(enemy_tent_position.x + 0.5,enemy_tent_position.y,enemy_tent_position.z + 0.5)
 	
-	var a_tent_2 : Static_Unit = tent.instantiate()
+	a_tent_2= tent.instantiate()
 	a_tent_2.set_static_position(enemy_tent_position)
 	a_tent_2.unitID = 1
 	a_tent_2.set_team(2)
@@ -181,6 +181,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if a_tent.health<=0:
+		get_tree().change_scene_to_file("res://lose_scene.tscn")
+	if a_tent_2.health<=0:
+		get_tree().change_scene_to_file("res://win_scene.tscn")
 	if Input.is_action_just_released("ability_1"):
 		if (temp_selection != null):
 			if (temp_selection.get_script().get_global_name() == "Static_Unit"):

@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://cudx4wvu4nead"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_0ye1h"]
+[ext_resource type="AudioStream" uid="uid://daqo6si3cxorf" path="res://music/XiMo - Clockwork Carousel.mp3" id="2_god0q"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5lx11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h5y2s"]
+texture = SubResource("CanvasTexture_5lx11")
+modulate_color = Color(0.525891, 0.93462, 0.723951, 1)
+
+[sub_resource type="Theme" id="Theme_kacp1"]
+Button/font_sizes/font_size = 40
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ye1h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -76.0
+offset_right = 47.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.792245, 0.954982, 0.994572, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.7
+anchor_bottom = 0.5
+offset_left = 5.39999
+offset_top = -66.0
+offset_right = 4.60004
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h5y2s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.366
+anchor_right = 1.0
+anchor_bottom = 0.856
+offset_top = -0.0680084
+offset_bottom = -0.0880127
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kacp1")
+theme_override_constants/separation = 20
+
+[node name="start" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+text = "Start"
+
+[node name="quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = 19.0
+offset_right = 84.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_god0q")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -258.0
+offset_top = 118.0
+offset_right = 257.0
+offset_bottom = 255.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.983492, 0.9437, 0.810919, 1)
+theme_override_colors/font_shadow_color = Color(0.627451, 0.14902, 0.627451, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Zoophobia"
+
+[connection signal="button_down" from="Panel/VBoxContainer/start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Panel/VBoxContainer/quit" to="." method="_on_quit_button_down"]

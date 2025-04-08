@@ -12,3 +12,11 @@ res://MeshLibrary.tscn
 res://Scripts/dynamic_unit.gd
 res://beaver.tscn
 res://squirrel.tscn
+res://menu.gd
+res://menu.tscn
+res://control_interface.tscn
+res://win_scene.gd
+res://lose_scene.gd
+res://lose_scene.tscn
+res://win_scene.tscn
+res://Scripts/main.gd
