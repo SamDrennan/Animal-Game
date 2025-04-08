@@ -104,7 +104,6 @@ func attack(delta: float) -> void:
 				carrying.fill(0)
 				carrying[2] = 10
 				get_parent().player_tribe.add_resources(carrying)
-
 				attacking = null
 	
 

@@ -20,3 +20,4 @@ res://lose_scene.gd
 res://lose_scene.tscn
 res://win_scene.tscn
 res://Scripts/main.gd
+res://Scripts/static_unit.gd

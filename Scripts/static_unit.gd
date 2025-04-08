@@ -88,6 +88,7 @@ func spawn2() -> void:
 		a_squirrel.position = spawn_position
 		a_squirrel.set_unitID(2)
 		a_squirrel.set_team(team)
+		a_squirrel.damage=15
 		if (check_resources(a_squirrel)):
 			reduce_resources(a_squirrel)
 			get_parent().add_child(a_squirrel)
@@ -100,6 +101,7 @@ func spawn3() -> void:
 		a_wolf.position = spawn_position
 		a_wolf.set_unitID(3)
 		a_wolf.set_team(team)
+		a_wolf.damage=25
 		if (check_resources(a_wolf)):
 			reduce_resources(a_wolf)
 			get_parent().add_child(a_wolf)
@@ -112,6 +114,7 @@ func spawn4() -> void:
 		a_bear.position = spawn_position
 		a_bear.set_unitID(4)
 		a_bear.set_team(team)
+		a_bear.damage=35
 		if (check_resources(a_bear)):
 			reduce_resources(a_bear)
 			get_parent().add_child(a_bear)
