@@ -30,6 +30,8 @@ var path
 
 var animation
 
+
+
 func _init():
 	# set super value
 	super._init(100,0)
@@ -49,7 +51,7 @@ func _ready() -> void:
 			
 		4:
 			label.text = "Bear"
-			#animation=$AnimationPlayer
+			
 	
 func _process(delta: float) -> void:
 	$Sprite3D/SubViewport/ProgressBar.value=health
@@ -95,9 +97,15 @@ func attack(delta: float) -> void:
 			cooldown = 1
 			animation.play("attacking")
 			if attacking.health <=0:
+				
+				animation.pause()
+				carrying = []
+				carrying.resize(5)
+				carrying.fill(0)
+				carrying[2] = 10
+				get_parent().player_tribe.add_resources(carrying)
+
 				attacking = null
-				if (unitID == 3):
-					animation.pause()
 	
 
 func harvest(delta: float) -> void:
@@ -114,7 +122,7 @@ func harvest(delta: float) -> void:
 			tent_pos = get_parent().enemy_tent_position
 		
 		if ((harvest_location - position).length() < 2 and not returning):
-			animation.play("gathering")
+			animation.play("gather")
 			if (collect_cooldown <= 0):
 				carrying = []
 				carrying.resize(5)
