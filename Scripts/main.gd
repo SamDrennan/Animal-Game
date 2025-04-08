@@ -243,9 +243,6 @@ func select_node(event):
 						2:
 							temp_selection.harvesting = 1
 							clicked_resource = true
-						5:
-							temp_selection.harvesting = 3
-							clicked_resource = true
 						6:
 							temp_selection.harvesting = 4
 							clicked_resource = true

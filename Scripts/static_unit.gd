@@ -12,9 +12,9 @@ var spawn_position: Vector3
 
 # variables for AI spawning
 var first_spawn: bool = true
-var spawn_squirrel: float = 8
-var spawn_wolf: float = 14
-var spawn_bear: float = 18
+var spawn_squirrel: float = 14
+var spawn_wolf: float = 20
+var spawn_bear: float = 30
 
 func _init():
 	# set super value
@@ -57,7 +57,7 @@ func spawn_AI(delta: float) -> void:
 		first_spawn = false
 	if (spawn_squirrel <= 0):
 		spawn2()
-		spawn_squirrel = 8
+		spawn_squirrel = 14
 	if (spawn_wolf <= 0):
 		spawn3()
 		spawn_wolf = 20
