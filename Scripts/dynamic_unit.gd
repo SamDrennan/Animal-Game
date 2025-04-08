@@ -98,9 +98,7 @@ func attack(delta: float) -> void:
 				attacking = null
 				if (unitID == 3):
 					animation.pause()
-	else:
-		if (unitID == 3):
-			animation.pause()
+	
 
 func harvest(delta: float) -> void:
 	

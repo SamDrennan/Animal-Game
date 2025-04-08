@@ -93,13 +93,15 @@ autoplay = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.288
 anchor_right = 0.5
+anchor_bottom = 0.288
 offset_left = -258.0
-offset_top = 118.0
+offset_top = -68.624
 offset_right = 257.0
-offset_bottom = 255.0
+offset_bottom = 68.376
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.983492, 0.9437, 0.810919, 1)
 theme_override_colors/font_shadow_color = Color(0.627451, 0.14902, 0.627451, 1)
