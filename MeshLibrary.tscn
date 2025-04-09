@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=3 uid="uid://cyndeknsviv5k"]
 
-[ext_resource type="ArrayMesh" uid="uid://bala4qxyagjoo" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj" id="1_i0msb"]
-[ext_resource type="ArrayMesh" uid="uid://bw2qcrj7bq12y" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj" id="2_mm433"]
-[ext_resource type="ArrayMesh" uid="uid://deyfcj85lxdsw" path="res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj" id="3_andkr"]
-[ext_resource type="ArrayMesh" uid="uid://cf8to0vsmhv7j" path="res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj" id="6_h58aa"]
-[ext_resource type="ArrayMesh" uid="uid://kokrs7vrmjps" path="res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj" id="7_3jx2w"]
-[ext_resource type="ArrayMesh" uid="uid://duwr2tyxrqavw" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj" id="8_507ma"]
-[ext_resource type="ArrayMesh" uid="uid://dffy3n30cni6d" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj" id="9_3ir4u"]
-[ext_resource type="ArrayMesh" uid="uid://ctx70ou5e87b3" path="res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj" id="10_0tfye"]
-[ext_resource type="ArrayMesh" uid="uid://8eohidnol5ph" path="res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj" id="11_h23ot"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_rock.obj" id="1_i0msb"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/cliff_block_stone.obj" id="2_mm433"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/flower_purpleA.obj" id="3_andkr"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/log_stack.obj" id="6_h58aa"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/rock_tallF.obj" id="7_3jx2w"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_largeF.obj" id="8_507ma"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/stone_tallB.obj" id="9_3ir4u"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/tent_detailedOpen.obj" id="10_0tfye"]
+[ext_resource type="ArrayMesh" path="res://Assets/kenney_nature-kit/Models/OBJ format/tree_cone_fall.obj" id="11_h23ot"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_kuprp"]
 data = PackedVector3Array(0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, 0.5, 1, 0.5, -0.5, 1, 0.5, 0.5, 0, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 1, 0.5, 0.5, 0, 0.5, 0.5, 1, 0.5, -0.5, 0, 0.5, -0.5, 1, 0.5, 0.5, 0, -0.5, -0.5, 1, -0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, 0.5, 0, -0.5, 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5)
